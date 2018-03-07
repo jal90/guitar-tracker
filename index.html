@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <button id="signup" class="btn btn-default">Sign up!</button>
-      <button id="signin" class="btn btn-default">Sign in!</button>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <h1>Example</h1>
+
+  <form id="signup" class="signup">
+    <input name="credentials[email]" type="text" placeholder="an@example.email">
+    <input name="credentials[password]" type="password" placeholder="an example password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="submit" value="Sign Up!">
+      </div>
+    </div>
+  </form>
+
+  <form id="signin" class="signin">
+    <input name="credentials[email]" type="text" placeholder="an@example.email">
+    <input name="credentials[password]" type="password" placeholder="an example password">
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="submit" value="Sign In!">
+      </div>
+    </div>
+  </form>
+
+  <form id="signout">
+    <fieldset>
+      <legend>Sign out and leave this place</legend>
+      <input type="submit" value="Sign Out">
+    </fieldset>
+  </form>
+
+</body>
+
 </html>

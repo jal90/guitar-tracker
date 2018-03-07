@@ -26,10 +26,19 @@ const onSignout = (event) => {
     .catch(ui.signoutFailure)
 }
 
+const onChangePw = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.changePw(data)
+    .then(ui.changePwSuccess)
+    .catch(ui.changePwFailure)
+}
+
 const addHandlers = () => {
   $('#signup').on('submit', onSignup)
   $('#signin').on('submit', onSignin)
   $('#signout').on('submit', onSignout)
+  $('#changepw').on('submit', onChangePw)
 }
 
 module.exports = {

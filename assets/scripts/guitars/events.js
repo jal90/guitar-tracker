@@ -5,16 +5,21 @@ const ui = require('./ui')
 const onCreateGuitar = (event) => {
   event.preventDefault()
 
+  let emptyFieldCount = 0
   const data = getFormFields(event.target)
-  console.log('data is', data)
-  api.createGuitar(data)
-    // .then(ui.signupSuccess)
-    // .catch(ui.signupFailure)
+  const guitar = data.guitar
+  for (const key in guitar) {
+    console.log('current value is ', guitar[key])
+    if (guitar[key] === '') {
+      $('body').append(`cannot leave ${key} blank` + '<br/>')
+      emptyFieldCount += 1
+    }
+  }
+  if (emptyFieldCount === 0) {
+    api.createGuitar(data)
+      .then(ui.createGuitarSuccess)
+  }
 }
-
-
-
-
 
 
 

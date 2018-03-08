@@ -1,0 +1,19 @@
+{{#each guitars as |guitar|}}
+
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+
+  <ul data-id="{{guitar.id}}"> <li>make: {{guitar.make}}</li>
+  <div>
+    {{#if guitar.model}}
+      <li>{{guitar.model}}</li>
+      <li>{{guitar.id}}</li>
+<li><button id="deleteBookButton" class="btn btn-default delete">Delete book!</button></li>
+    {{else}}
+      No author provided.
+    {{/if}}
+  </div>
+</ul>
+
+{{/each}}

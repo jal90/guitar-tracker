@@ -1,3 +1,5 @@
+const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
+
 const createGuitarSuccess = function () {
   $('body').append('Created guitar successfully')
   document.getElementById('createguitar').reset()
@@ -11,10 +13,11 @@ const createGuitarSuccess = function () {
 
 const getGuitarsSuccess = function (data) {
   console.log('datais', data)
-
-  data.guitars.forEach(x => {
-    $('body').append(Object.values(x) + '</br>')
-  })
+  const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
+  $('body').append(showGuitarsHTML)
+  // data.guitars.forEach(x => {
+    // $('body').append(Object.values(x) + '</br>')
+  // })
 }
 
 const updateGuitarSuccess = function () {

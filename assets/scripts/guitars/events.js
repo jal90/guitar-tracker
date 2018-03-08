@@ -10,6 +10,9 @@ const onCreateGuitar = (event) => {
   const guitar = data.guitar
   for (const key in guitar) {
     console.log('current value is ', guitar[key])
+
+    // TODO make a switch statement so errors can pertain to specific empty fields by name
+
     if (guitar[key] === '') {
       $('body').append(`cannot leave ${key} blank` + '<br/>')
       emptyFieldCount += 1
@@ -21,13 +24,26 @@ const onCreateGuitar = (event) => {
   }
 }
 
+const onGetGuitars = (event) => {
+  event.preventDefault()
 
+  api.getGuitars()
+    .then(ui.getGuitarsSuccess)
+}
 
+const onUpdateGuitar = (event) => {
+  event.preventDefault()
 
-
+  const data = getFormFields(event.target)
+  api.updateGuitar(data) // (data)
+    .then(ui.updateGuitarSuccess)
+    .catch(ui.updateGuitarFailure)
+}
 
 const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
+  $('#guitarsindex').on('submit', onGetGuitars)
+  $('#updateguitar').on('submit', onUpdateGuitar)
 }
 
 module.exports = {

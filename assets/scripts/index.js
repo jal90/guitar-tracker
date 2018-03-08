@@ -5,11 +5,13 @@ const config = require('./config')
 
 const authEvents = require('./auth/events.js')
 const userEvents = require('./users/events.js')
+const guitarEvents = require('./guitars/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   userEvents.addHandlers()
+  guitarEvents.addHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file

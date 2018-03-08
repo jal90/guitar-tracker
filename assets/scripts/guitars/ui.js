@@ -27,10 +27,22 @@ const updateGuitarFailure = function () {
   document.getElementById('updateguitar').reset()
 }
 
+const deleteGuitarSuccess = function () {
+  $('body').append('Deleted guitar successfully')
+  document.getElementById('deleteguitar').reset()
+}
+
+const deleteGuitarFailure = function () {
+  $('body').append('Delete guitar FAILED')
+  document.getElementById('deleteguitar').reset()
+}
+
 module.exports = {
   createGuitarSuccess,
   // createGuitarFailure,
   getGuitarsSuccess,
   updateGuitarSuccess,
-  updateGuitarFailure
+  updateGuitarFailure,
+  deleteGuitarSuccess,
+  deleteGuitarFailure
 }

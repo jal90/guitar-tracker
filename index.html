@@ -17,6 +17,7 @@
   <h1>Example</h1>
 
   <form id="signup" class="signup">
+    <legend> Sign up</legend>
     <input name="credentials[email]" type="text" placeholder="an@example.email">
     <input name="credentials[password]" type="password" placeholder="an example password">
     <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
@@ -28,6 +29,7 @@
   </form>
 
   <form id="signin" class="signin">
+    <legend> Sign in</legend>
     <input name="credentials[email]" type="text" placeholder="an@example.email">
     <input name="credentials[password]" type="password" placeholder="an example password">
     <div class="row">
@@ -39,6 +41,7 @@
 
   <form id="signout">
     <fieldset>
+      <legend> Sign out</legend>
       <input type="submit" value="Sign Out">
     </fieldset>
   </form>
@@ -55,6 +58,7 @@
 </form>
 
 <form id="createguitar" class="createguitar">
+  <legend> Create Guitar</legend>
   <input name="guitar[make]" type="text" placeholder="make">
   <input name="guitar[model]" type="text" placeholder="model">
   <input name="guitar[string_brand]" type="text" placeholder="string brand">
@@ -71,6 +75,7 @@
 
 <form id="guitarsindex">
   <fieldset>
+    <legend> See all guitars</legend>
     <input type="submit" value="See all guitars">
   </fieldset>
 </form>
@@ -90,6 +95,16 @@
   <input type="submit" value="Update a guitar">
 </fieldset>
 </form>
+
+
+<form id="deleteguitar">
+  <fieldset>
+    <legend> Delete a guitar</legend>
+    <input name="guitar[id]" type="text" placeholder="id">
+    <input type="submit" value="delete a guitar">
+  </fieldset>
+</form>
+
 
   <!-- This is not part of requirements -->
   <!-- <form id="users">

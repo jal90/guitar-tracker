@@ -44,10 +44,9 @@ const updateGuitarFailure = function () {
   document.getElementById('updateguitar').reset()
 }
 
-const deleteGuitarSuccess = function () {
-  $('body').append('Deleted guitar successfully')
-  document.getElementById('deleteguitar').reset()
-}
+// function unnecessary, as ui feedback is handled in events.js
+// const deleteGuitarSuccess = function () {
+// }
 
 const deleteGuitarFailure = function () {
   $('body').append('Delete guitar FAILED')
@@ -61,6 +60,6 @@ module.exports = {
   showGuitarSuccess,
   updateGuitarSuccess,
   updateGuitarFailure,
-  deleteGuitarSuccess,
+  // deleteGuitarSuccess,
   deleteGuitarFailure
 }

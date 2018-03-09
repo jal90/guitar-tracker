@@ -49,10 +49,9 @@ const updateGuitar = function (data) {
   })
 }
 
-const deleteGuitar = function (data) {
-  // console.log('data.guitar.id is ', data.guitar.id)
+const deleteGuitar = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/guitars/' + data.guitar.id,
+    url: config.apiOrigin + '/guitars/' + id,
     method: 'DELETE',
     headers: {
       contentType: 'application/json',

@@ -50,10 +50,15 @@ const onUpdateGuitar = (event) => {
 const onDeleteGuitar = (event) => {
   event.preventDefault()
 
-  const data = getFormFields(event.target)
-  api.deleteGuitar(data)
-    .then(ui.deleteGuitarSuccess)
-    .catch(ui.deleteGuitarFailure)
+  // const button = document.getElementById('deleteGuitarButton')
+  const dataId = $(event.target).attr('data-id')
+  // const id = button.getAttribute('data-id')
+  // console.log('id is ', id)
+
+  api.deleteGuitar(dataId)
+    .then($(event.target).parent().fadeOut(1000))
+    // .then(ui.deleteGuitarSuccess)
+  //   .catch(ui.deleteGuitarFailure)
 }
 
 const addHandlers = () => {
@@ -61,6 +66,7 @@ const addHandlers = () => {
   $('#guitarsindex').on('submit', onGetGuitars)
   $('#updateguitar').on('submit', onUpdateGuitar)
   $('#deleteguitar').on('submit', onDeleteGuitar)
+  $('body').on('click', '.deleteGuitarButton', onDeleteGuitar)
   $('#showguitar').on('submit', onShowGuitar)
 }
 

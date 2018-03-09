@@ -16,6 +16,7 @@ const signinSuccess = function (data) {
   $('#user-page').show()
   $('#home-page').hide()
   $('#login-modal').modal('toggle')
+  $('#welcome').html(data.user.email.charAt(0).toUpperCase() + data.user.email.slice(1) + '!')
   store.user = data.user
   document.getElementById('signin').reset()
 }

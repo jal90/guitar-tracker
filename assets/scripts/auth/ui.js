@@ -31,6 +31,8 @@ const signoutSuccess = function () {
   $('#feedback').html('Signed OUT successfully')
   $('#user-page').hide()
   $('#home-page').show()
+  $('#display-message').html('')
+  $('#guitar-display').html('')
 }
 
 // const signoutFailure = function () {

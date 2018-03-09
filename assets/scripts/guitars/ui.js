@@ -1,4 +1,4 @@
-// const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
+const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
 
 const createGuitarSuccess = function () {
   $('body').append('Created guitar successfully')
@@ -13,11 +13,17 @@ const createGuitarSuccess = function () {
 
 const getGuitarsSuccess = function (data) {
   console.log('datais', data)
-  // const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
-  // $('body').append(showGuitarsHTML)
-  data.guitars.forEach(x => {
-    $('body').append(Object.values(x) + '</br>')
-  })
+  const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
+
+  if (data.guitars.length === 0) {
+    $('#display-message').html('Create some guitars first!')
+  } else {
+    $('#display-message').html('Click on a guitar to see expanded view')
+    $('#guitar-display').html(showGuitarsHTML)
+    // data.guitars.forEach(x => {
+    //   $('#guitar-display').html(Object.values(x) + '</br>')
+    // })
+  }
 }
 
 const showGuitarSuccess = function (data) {

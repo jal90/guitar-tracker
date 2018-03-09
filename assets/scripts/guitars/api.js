@@ -24,7 +24,17 @@ const getGuitars = function () {
   })
 }
 
-// TODO look up specific guitar(s) by id, or more user-friendly, by make or model (which may show multiple guitars by the same brand, for instance)
+const showGuitar = function (data) {
+  // console.log('data.guitar.id is ', data.guitar.id)
+  return $.ajax({
+    url: config.apiOrigin + '/guitars/' + data.guitar.id,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 const updateGuitar = function (data) {
   console.log('data.guitar.id is', data.guitar.id)
@@ -54,6 +64,7 @@ const deleteGuitar = function (data) {
 module.exports = {
   createGuitar,
   getGuitars,
+  showGuitar,
   updateGuitar,
   deleteGuitar
 }

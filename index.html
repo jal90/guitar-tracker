@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Guitar Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -12,107 +12,121 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
+<!-- END OF HEAD -->
+
+
+<!-- START OF BODY -->
 
 <body class="container-fluid">
-  <h1>Example</h1>
+  <h1>Welcome to Guitar Tracker</h1>
 
-  <form id="signup" class="signup">
-    <legend> Sign up</legend>
-    <input name="credentials[email]" type="text" placeholder="an@example.email">
-    <input name="credentials[password]" type="password" placeholder="an example password">
-    <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
-    <div class="row">
-      <div class="col-xs-6">
-        <input type="submit" value="Sign Up!">
+
+  <!-- START OF HOME PAGE -->
+  <div id="home-page">
+    <form id="signup" class="signup">
+      <legend> Sign up</legend>
+      <input name="credentials[email]" type="text" placeholder="an@example.email">
+      <input name="credentials[password]" type="password" placeholder="an example password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="submit" value="Sign Up!">
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
 
-  <form id="signin" class="signin">
-    <legend> Sign in</legend>
-    <input name="credentials[email]" type="text" placeholder="an@example.email">
-    <input name="credentials[password]" type="password" placeholder="an example password">
-    <div class="row">
-      <div class="col-xs-6">
-        <input type="submit" value="Sign In!">
+    <form id="signin" class="signin">
+      <legend> Sign in</legend>
+      <input name="credentials[email]" type="text" placeholder="an@example.email">
+      <input name="credentials[password]" type="password" placeholder="an example password">
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="submit" value="Sign In!">
+        </div>
       </div>
-    </div>
-  </form>
-
-  <form id="signout">
-    <fieldset>
-      <legend> Sign out</legend>
-      <input type="submit" value="Sign Out">
-    </fieldset>
-  </form>
-
-  <form id="changepw">
-  <fieldset>
-    <legend> Change your password</legend>
-    <input name="passwords[old]" type="password" placeholder="current password">
-    <input name="passwords[new]" type="password" placeholder="new password">
-    <input type="submit" value="Change password">
-    <!-- <div class="error-message">Problem changing password</div>
-    <div class="success-message">Changed password successfully</div> -->
-  </fieldset>
-</form>
-
-<form id="createguitar" class="createguitar">
-  <legend> Create Guitar</legend>
-  <input name="guitar[make]" type="text" placeholder="make">
-  <input name="guitar[model]" type="text" placeholder="model">
-  <input name="guitar[string_brand]" type="text" placeholder="string brand">
-  <input name="guitar[string_guage]" type="text" placeholder="string guage">
-  <input name="guitar[last_string_change]" type="text" placeholder="last string change">
-  <input name="guitar[last_setup]" type="text" placeholder="last setup">
-  <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
-  <div class="row">
-    <div class="col-xs-6">
-      <input type="submit" value="Create Guitar!">
-    </div>
+    </form>
   </div>
-</form>
-
-<form id="guitarsindex">
-  <fieldset>
-    <legend> See all guitars</legend>
-    <input type="submit" value="See all guitars">
-  </fieldset>
-</form>
-
-<form id="updateguitar">
-<fieldset>
-  <legend> Update a guitar</legend>
-  <input name="guitar[id]" type="text" placeholder="id">
-  <input name="guitar[make]" type="text" placeholder="make">
-  <input name="guitar[model]" type="text" placeholder="model">
-  <input name="guitar[string_brand]" type="text" placeholder="string brand">
-  <input name="guitar[string_guage]" type="text" placeholder="string guage">
-  <input name="guitar[last_string_change]" type="text" placeholder="last string change">
-  <input name="guitar[last_setup]" type="text" placeholder="last setup">
-  <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
-
-  <input type="submit" value="Update a guitar">
-</fieldset>
-</form>
+  <!-- END OF HOME PAGE -->
 
 
-<form id="deleteguitar">
-  <fieldset>
-    <legend> Delete a guitar</legend>
-    <input name="guitar[id]" type="text" placeholder="id">
-    <input type="submit" value="delete a guitar">
-  </fieldset>
-</form>
+  <!-- START OF USER PAGE -->
+  <div id="user-page">
+    <form id="signout">
+      <fieldset>
+        <legend> Sign out</legend>
+        <input type="submit" value="Sign Out">
+      </fieldset>
+    </form>
+
+    <form id="changepw">
+      <fieldset>
+        <legend> Change your password</legend>
+        <input name="passwords[old]" type="password" placeholder="current password">
+        <input name="passwords[new]" type="password" placeholder="new password">
+        <input type="submit" value="Change password">
+      </fieldset>
+    </form>
+
+    <form id="createguitar" class="createguitar">
+      <legend> Create Guitar</legend>
+      <input name="guitar[make]" type="text" placeholder="make">
+      <input name="guitar[model]" type="text" placeholder="model">
+      <input name="guitar[string_brand]" type="text" placeholder="string brand">
+      <input name="guitar[string_guage]" type="text" placeholder="string guage">
+      <input name="guitar[last_string_change]" type="text" placeholder="last string change">
+      <input name="guitar[last_setup]" type="text" placeholder="last setup">
+      <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="submit" value="Create Guitar!">
+        </div>
+      </div>
+    </form>
+
+    <form id="guitarsindex">
+      <fieldset>
+        <legend> See all guitars</legend>
+        <input type="submit" value="See all guitars">
+      </fieldset>
+    </form>
+
+    <form id="updateguitar">
+      <fieldset>
+        <legend> Update a guitar</legend>
+        <input name="guitar[id]" type="text" placeholder="id">
+        <input name="guitar[make]" type="text" placeholder="make">
+        <input name="guitar[model]" type="text" placeholder="model">
+        <input name="guitar[string_brand]" type="text" placeholder="string brand">
+        <input name="guitar[string_guage]" type="text" placeholder="string guage">
+        <input name="guitar[last_string_change]" type="text" placeholder="last string change">
+        <input name="guitar[last_setup]" type="text" placeholder="last setup">
+        <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
+
+        <input type="submit" value="Update a guitar">
+      </fieldset>
+    </form>
+
+    <form id="showguitar">
+      <fieldset>
+        <legend> See a guitar</legend>
+        <input name="guitar[id]" type="text" placeholder="id">
+        <input type="submit" value="show a guitar">
+      </fieldset>
+    </form>
 
 
-  <!-- This is not part of requirements -->
-  <!-- <form id="users">
-    <fieldset>
-      <input type="submit" value="Users">
-    </fieldset>
-  </form> -->
+    <form id="deleteguitar">
+      <fieldset>
+        <legend> Delete a guitar</legend>
+        <input name="guitar[id]" type="text" placeholder="id">
+        <input type="submit" value="delete a guitar">
+      </fieldset>
+    </form>
+  </div>
+  <!-- END OF USER PAGE -->
+
 
 </body>
+<!-- END OF BODY -->
 
 </html>

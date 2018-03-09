@@ -30,6 +30,14 @@ const onGetGuitars = (event) => {
     .then(ui.getGuitarsSuccess)
 }
 
+const onShowGuitar = (event) => {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  api.showGuitar(data)
+    .then(ui.showGuitarSuccess)
+}
+
 const onUpdateGuitar = (event) => {
   event.preventDefault()
 
@@ -53,6 +61,7 @@ const addHandlers = () => {
   $('#guitarsindex').on('submit', onGetGuitars)
   $('#updateguitar').on('submit', onUpdateGuitar)
   $('#deleteguitar').on('submit', onDeleteGuitar)
+  $('#showguitar').on('submit', onShowGuitar)
 }
 
 module.exports = {

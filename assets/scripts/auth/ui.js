@@ -1,33 +1,40 @@
 const store = require('../store')
 
 const signupSuccess = function () {
-  $('body').append('Signed up successfully')
+  $('#signup-modal').modal('toggle')
+  $('#feedback').html('Signed up successfully - now please sign in')
   document.getElementById('signup').reset()
 }
 
 const signupFailure = function () {
-  $('body').append('Sign up FAILED')
+  $('.signup-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
+  // $('body').append('Sign up FAILED')
   document.getElementById('signup').reset()
 }
 
 const signinSuccess = function (data) {
-  $('body').append('Signed IN successfully')
+  $('#user-page').show()
+  $('#home-page').hide()
+  $('#login-modal').modal('toggle')
   store.user = data.user
   document.getElementById('signin').reset()
 }
 
 const signinFailure = function () {
-  $('body').append('Sign IN FAILED')
+  $('.login-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
+  // $('body').append('Sign IN FAILED')
   document.getElementById('signin').reset()
 }
 
 const signoutSuccess = function () {
-  $('body').append('Signed OUT successfully')
+  $('#feedback').html('Signed OUT successfully')
+  $('#user-page').hide()
+  $('#home-page').show()
 }
 
-const signoutFailure = function () {
-  $('body').append('Sign OUT FAILED')
-}
+// const signoutFailure = function () {
+//   $('body').append('Sign OUT FAILED')
+// }
 
 const changePwSuccess = function () {
   $('body').append('changed password successfully')
@@ -45,7 +52,7 @@ module.exports = {
   signinSuccess,
   signinFailure,
   signoutSuccess,
-  signoutFailure,
+  // signoutFailure,
   changePwSuccess,
   changePwFailure
 }

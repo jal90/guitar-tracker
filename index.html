@@ -17,12 +17,66 @@
 
 <!-- START OF BODY -->
 
+<!-- START OF HOME PAGE -->
+
 <body class="container-fluid">
-  <h1>Welcome to Guitar Tracker</h1>
-
-
-  <!-- START OF HOME PAGE -->
   <div id="home-page">
+    <h1>Welcome to Guitar Tracker</h1>
+
+    <!-- LOG IN BUTTON -->
+    <a href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+
+    <!-- LOG IN MODAL -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Log in to Your Account</h1><br>
+
+          <form id="signin">
+            <p>email:</p>
+            <input name="credentials[email]" type="text">
+            <p>password:</p>
+            <input name="credentials[password]" type="password">
+            <input type="submit" value="Log in">
+          </form>
+
+          <div class="login-feedback">
+            <p>Invalid input, try again</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN UP BUTTON -->
+    <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+
+    <!-- SIGN UP MODAL -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Sign up for guitar tracker</h1><br>
+
+          <form id="signup">
+            <p>email:</p>
+            <input name="credentials[email]" type="text">
+            <p>password:</p>
+            <input name="credentials[password]" type="password">
+            <p>confirm password:</p>
+            <input name="credentials[password_confirmation]" type="password">
+            <input type="submit" value="Sign Up!">
+          </form>
+
+          <div class="signup-feedback">
+            <p>Invalid input, try again</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p> This is the story and purpose of guitar tracker </p>
+
+    <!-- FOLLOWING CODE REPLACED BY MODALS -->
+    <!-- <div id="home-page">
     <form id="signup" class="signup">
       <legend> Sign up</legend>
       <input name="credentials[email]" type="text" placeholder="an@example.email">
@@ -33,9 +87,10 @@
           <input type="submit" value="Sign Up!">
         </div>
       </div>
-    </form>
+    </form> -->
 
-    <form id="signin" class="signin">
+
+    <!-- <form id="signin" class="signin">
       <legend> Sign in</legend>
       <input name="credentials[email]" type="text" placeholder="an@example.email">
       <input name="credentials[password]" type="password" placeholder="an example password">
@@ -45,6 +100,10 @@
         </div>
       </div>
     </form>
+  </div> -->
+
+  <span id="feedback"></span>
+
   </div>
   <!-- END OF HOME PAGE -->
 

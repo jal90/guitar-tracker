@@ -9,7 +9,6 @@ const guitarEvents = require('./guitars/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
-  // $('#user-page').hide() TODO uncomment this line
   authEvents.addHandlers()
   userEvents.addHandlers()
   guitarEvents.addHandlers()

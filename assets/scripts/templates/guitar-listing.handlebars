@@ -29,6 +29,17 @@ clickable, but the message should probably be in ui.js, not here-->
       <!-- {{/if}} -->
       <button id="updateGuitarButton" class="btn btn-default">Update this guitar</button>
       <button data-id= {{guitar.id}} class="btn btn-default deleteGuitarButton">Delete this guitar</button>
+      <!-- <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a> -->
+      <!-- DELETE CONFIRMATION MODAL -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="loginmodal-container">
+              <h1>Are you sure you want to delete this guitar?</h1><br>
+                <input id="delete" type="submit" value="Yes">
+                <input data-toggle="modal" data-target="#delete-modal" type="submit" value="No">
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 

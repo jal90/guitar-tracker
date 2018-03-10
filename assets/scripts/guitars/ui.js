@@ -48,10 +48,11 @@ const updateGuitarFailure = function () {
 // const deleteGuitarSuccess = function () {
 // }
 
-const deleteGuitarFailure = function () {
-  $('body').append('Delete guitar FAILED')
-  document.getElementById('deleteguitar').reset()
-}
+// function unnecessary because deleting will never fail (option only shows up on existing guitars)
+// const deleteGuitarFailure = function () {
+//   $('body').append('Delete guitar FAILED')
+//   document.getElementById('deleteguitar').reset()
+// }
 
 module.exports = {
   createGuitarSuccess,
@@ -59,7 +60,7 @@ module.exports = {
   getGuitarsSuccess,
   showGuitarSuccess,
   updateGuitarSuccess,
-  updateGuitarFailure,
+  updateGuitarFailure
   // deleteGuitarSuccess,
-  deleteGuitarFailure
+  // deleteGuitarFailure
 }

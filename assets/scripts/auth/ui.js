@@ -13,7 +13,7 @@ const signupFailure = function () {
 }
 
 const signinSuccess = function (data) {
-  $('#user-page').show()
+  $('.user-page').show()
   $('#home-page').hide()
   $('#login-modal').modal('toggle')
   $('#welcome').html(data.user.email.charAt(0).toUpperCase() + data.user.email.slice(1) + '!')
@@ -29,7 +29,7 @@ const signinFailure = function () {
 
 const signoutSuccess = function () {
   $('#feedback').html('Signed OUT successfully')
-  $('#user-page').hide()
+  $('.user-page').hide()
   $('#home-page').show()
   $('#display-message').html('')
   $('#guitar-display').html('')

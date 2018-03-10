@@ -2,6 +2,8 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
+let dataId = 0
+
 const onCreateGuitar = (event) => {
   event.preventDefault()
 
@@ -47,26 +49,33 @@ const onUpdateGuitar = (event) => {
     .catch(ui.updateGuitarFailure)
 }
 
-const onDeleteGuitar = (event) => {
+const onDeleteCheck = (event) => {
   event.preventDefault()
 
-  // const button = document.getElementById('deleteGuitarButton')
-  const dataId = $(event.target).attr('data-id')
-  // const id = button.getAttribute('data-id')
-  // console.log('id is ', id)
+  dataId = $(event.target).attr('data-id')
+  $('#delete-modal').modal('show')
+  console.log('dataId is ', dataId)
+}
+
+// TODO get modal to come back a second time after deleting guitar
+const onDeleteGuitar = () => {
+  // event.preventDefault()
+
+  const thiss = $('[data-id=' + dataId + ']')
+  $(thiss).fadeOut(1000)
 
   api.deleteGuitar(dataId)
-    .then($(event.target).parent().fadeOut(1000))
-    // .then(ui.deleteGuitarSuccess)
-  //   .catch(ui.deleteGuitarFailure)
+    .then($('#delete-modal').modal('toggle'))
+    // .then($(event.target).parent().fadeOut(1000))
+    // .catch(ui.deleteGuitarFailure)
 }
 
 const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
   $('#guitarsindex').on('submit', onGetGuitars)
   $('#updateguitar').on('submit', onUpdateGuitar)
-  $('#deleteguitar').on('submit', onDeleteGuitar)
-  $('body').on('click', '.deleteGuitarButton', onDeleteGuitar)
+  $('body').on('click', '.deleteGuitarButton', onDeleteCheck)
+  $('body').on('click', '#delete', onDeleteGuitar)
   $('#showguitar').on('submit', onShowGuitar)
 }
 

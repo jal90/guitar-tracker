@@ -36,8 +36,8 @@ const onGetGuitars = (event) => {
 const onShowGuitar = (event) => {
   event.preventDefault()
 
-  const data = getFormFields(event.target)
-  api.showGuitar(data)
+  dataId = $(event.target).attr('data-id')
+  api.showGuitar(dataId)
     .then(ui.showGuitarSuccess)
 }
 
@@ -66,8 +66,6 @@ const onUpdateGuitar = (event) => {
   //
   //   }
   // }
-
-
 
   // const guitData = {}
 
@@ -102,7 +100,7 @@ const addHandlers = () => {
   $('body').on('click', '.deleteGuitarButton', onDeleteCheck)
   $('body').on('click', '.updateGuitarButton', onUpdateCheck)
   $('body').on('click', '#delete', onDeleteGuitar)
-  $('#showguitar').on('submit', onShowGuitar)
+  $('body').on('click', '.expandButton', onShowGuitar)
 }
 
 module.exports = {

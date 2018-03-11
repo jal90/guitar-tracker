@@ -24,9 +24,9 @@ const getGuitars = function () {
   })
 }
 
-const showGuitar = function (data) {
+const showGuitar = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/guitars/' + data.guitar.id,
+    url: config.apiOrigin + '/guitars/' + id,
     method: 'GET',
     headers: {
       contentType: 'application/json',

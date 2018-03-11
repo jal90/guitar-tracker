@@ -4,29 +4,14 @@
   <!-- TODO make the entirety of these divs (not including the buttons, which have their own functions) clickable
 by adding a class so that the enhanced view pops up for the guitar clicked on. Also add a message so users can know the divs are
 clickable, but the message should probably be in ui.js, not here-->
-<!-- TODO also, hide the id attribue. Let users instead look up individual guitars by make or model (if at all), not an arbitrary id numer -->
+
   <div data-id="{{guitar.id}}">
     <div class="col-xs-7 col-sm-6 col-md-4 spaced">
-      <!-- {{#if guitar.id}} -->
       <li>id: {{guitar.id}}</li>
       <li>make: {{guitar.make}}</li>
       <li>model: {{guitar.model}}</li>
-      <li>string brand: {{guitar.string_brand}}</li>
-      <li>string guage: {{guitar.string_guage}}</li>
-      <li>last string change: {{guitar.last_string_change}}</li>
-      <li>last setup: {{guitar.last_setup}}</li>
-      <li>setup notes: {{guitar.setup_notes}}</li>
 
-      <!-- {{else}}
-      <li>id: {{guitar.id}}</li>
-        Make information not available - please update -->
-
-      <!-- <button id="updateGuitarButton" class="btn btn-default update">Update this guitar</button>
-        <button id="deleteGuitarButton" class="btn btn-default delete">Delete this guitar</button> -->
-      <!-- {{/if}} -->
-      <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#update-modal" class="btn btn-default updateGuitarButton">Update this guitar</button>
-      <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#delete-modal" class="btn btn-default deleteGuitarButton">Delete this guitar</button>
-      <!-- <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a> -->
+      <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#expand-modal" class="btn btn-default expandButton">See details</button>
 
     </div>
   </div>

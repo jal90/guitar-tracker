@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://guitar-tracker.herokuapp.com'
+    production: 'https://guitartracker.herokuapp.com'
   }
 }
 

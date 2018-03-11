@@ -114,21 +114,31 @@
           </fieldset>
         </form>
 
-        <form id="createguitar" class="createguitar">
-          <legend> Create Guitar</legend>
-          <input name="guitar[make]" type="text" placeholder="make">
-          <input name="guitar[model]" type="text" placeholder="model">
-          <input name="guitar[string_brand]" type="text" placeholder="string brand">
-          <input name="guitar[string_guage]" type="text" placeholder="string guage">
-          <input name="guitar[last_string_change]" type="text" placeholder="last string change">
-          <input name="guitar[last_setup]" type="text" placeholder="last setup">
-          <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
-          <div class="row">
-            <div class="col-xs-6">
-              <input type="submit" value="Create Guitar!">
+
+        <button data-toggle="modal" data-target="#create-modal" class="btn btn-default">Create a guitar</button>
+
+        <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="loginmodal-container">
+              <form id="createguitar" class="createguitar">
+                <legend> Create Guitar</legend>
+                <input name="guitar[make]" type="text" placeholder="make" required>
+                <input name="guitar[model]" type="text" placeholder="model" required>
+                <input name="guitar[string_brand]" type="text" placeholder="string brand" required>
+                <input name="guitar[string_guage]" type="text" placeholder="string guage" required>
+                <input name="guitar[last_string_change]" type="text" placeholder="last string change" required>
+                <input name="guitar[last_setup]" type="text" placeholder="last setup" required>
+                <input name="guitar[setup_notes]" type="text" placeholder="setup notes" required>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <input type="submit" value="Create Guitar!">
+                  </div>
+                </div>
+              </form>
+              <input data-toggle="modal" data-target="#create-modal" type="submit" value="Close">
             </div>
           </div>
-        </form>
+        </div>
 
 
 

@@ -8,22 +8,11 @@ let dataId = 0
 const onCreateGuitar = (event) => {
   event.preventDefault()
 
-  let emptyFieldCount = 0
   const data = getFormFields(event.target)
-  const guitar = data.guitar
-  for (const key in guitar) {
-    console.log('current value is ', guitar[key])
 
-    // TODO make a switch statement so errors can pertain to specific empty fields by name
-    if (guitar[key] === '') {
-      $('body').append(`cannot leave ${key} blank` + '<br/>')
-      emptyFieldCount += 1
-    }
-  }
-  if (emptyFieldCount === 0) {
-    api.createGuitar(data)
-      .then(ui.createGuitarSuccess)
-  }
+  api.createGuitar(data)
+    .then(ui.createGuitarSuccess)
+    .catch(ui.createGuitarFailure)
 }
 
 const onGetGuitars = (event) => {

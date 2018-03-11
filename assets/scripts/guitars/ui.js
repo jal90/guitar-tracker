@@ -3,15 +3,16 @@ const getGuitarTemplate = require('../templates/guitar-show.handlebars')
 const store = require('../store')
 
 const createGuitarSuccess = function () {
-  // $('body').append('Created guitar successfully')
+  $('#create-modal').modal('hide')
+  $('#update-success').modal('show')
   document.getElementById('createguitar').reset()
 }
 
-// this functionality is currently being handled in events.js
-// const createGuitarFailure = function () {
-//   $('#createguitar').append('Create guitar FAILED')
-//   document.getElementById('createguitar').reset()
-// }
+
+const createGuitarFailure = function () {
+  $('#createguitar').append('Create guitar FAILED SOMEHOW???')
+  document.getElementById('createguitar').reset()
+}
 
 const getGuitarsSuccess = function (data) {
   console.log('datais', data)
@@ -52,7 +53,7 @@ const deleteGuitarFailure = function () {
 
 module.exports = {
   createGuitarSuccess,
-  // createGuitarFailure,
+  createGuitarFailure,
   getGuitarsSuccess,
   showGuitarSuccess,
   updateGuitarSuccess,

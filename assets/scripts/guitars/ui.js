@@ -1,4 +1,5 @@
 const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
+const getGuitarTemplate = require('../templates/guitar-show.handlebars')
 const store = require('../store')
 
 const createGuitarSuccess = function () {
@@ -29,9 +30,14 @@ const getGuitarsSuccess = function (data) {
 
 const showGuitarSuccess = function (data) {
   console.log('data.guitar is ', data.guitar)
-  for (const key in data.guitar) {
-    $('body').append(key + ': ' + data.guitar[key] + '</br>')
-  }
+  const getGuitarHTML = getGuitarTemplate({ guitar: data.guitar })
+  $('#guitar-details').html(getGuitarHTML)
+
+
+
+  // for (const key in data.guitar) {
+  //   $('#guitar-details').html(key + ': ' + data.guitar[key] + '</br>')
+  // }
   store.guitar = data.guitar
 
   document.getElementById('showguitar').reset()

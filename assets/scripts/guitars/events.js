@@ -44,18 +44,11 @@ const onShowGuitar = (event) => {
 const onUpdateCheck = (event) => {
   event.preventDefault()
 
-  dataId = $(event.target).attr('data-id')
-
-  // TODO right now this works only after a GET show request (which stores that guitar's data in the store)
-  // idea 1: fix it so that the show request happens when you click on "update guitar"
-  // idea 2: build the 'expanded view' where the buttons are located, and that'll do the get request
-  console.log('store.guitar is ', store.guitar)
-  console.log('dataId is ', dataId)
+  dataId = store.guitar.id
 }
 
 const onUpdateGuitar = (event) => {
   event.preventDefault()
-
 
   const updateData = getFormFields(event.target)
   console.log(updateData.guitar)
@@ -81,7 +74,7 @@ const onUpdateGuitar = (event) => {
 const onDeleteCheck = (event) => {
   event.preventDefault()
 
-  dataId = $(event.target).attr('data-id')
+  dataId = store.guitar.id
 }
 
 const onDeleteGuitar = () => {

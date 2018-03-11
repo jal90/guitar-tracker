@@ -79,7 +79,7 @@
       </div>
 
 
-      <span id="feedback"></span>
+
   </div>
   <!-- END OF HOME PAGE -->
 
@@ -112,7 +112,9 @@
             <input name="passwords[new]" type="password" placeholder="new password">
             <input type="submit" value="Change password">
           </fieldset>
+            <span id="feedback"></span>
         </form>
+
 
 
         <button data-toggle="modal" data-target="#create-modal" class="btn btn-default">Create a guitar</button>
@@ -122,13 +124,20 @@
             <div class="loginmodal-container">
               <form id="createguitar" class="createguitar">
                 <legend> Create Guitar</legend>
-                <input name="guitar[make]" type="text" placeholder="make" required>
-                <input name="guitar[model]" type="text" placeholder="model" required>
-                <input name="guitar[string_brand]" type="text" placeholder="string brand" required>
-                <input name="guitar[string_guage]" type="text" placeholder="string guage" required>
-                <input name="guitar[last_string_change]" type="text" placeholder="last string change" required>
-                <input name="guitar[last_setup]" type="text" placeholder="last setup" required>
-                <input name="guitar[setup_notes]" type="text" placeholder="setup notes" required>
+                make:
+                <input name="guitar[make]" type="text" required>
+                model:
+                <input name="guitar[model]" type="text" required>
+                string brand:
+                <input name="guitar[string_brand]" type="text" required>
+                string guage:
+                <input name="guitar[string_guage]" type="text" required>
+                date of last string change:
+                <input name="guitar[last_string_change]" type="text" required>
+                date of last setup:
+                <input name="guitar[last_setup]" type="text" required>
+                setup notes (optional):
+                <input name="guitar[setup_notes]" type="text">
                 <div class="row">
                   <div class="col-xs-6">
                     <input type="submit" value="Create Guitar!">
@@ -143,13 +152,13 @@
 
 
 
-        <form id="showguitar">
+        <!-- <form id="showguitar">
           <fieldset>
             <legend> See a guitar - BROKEN</legend>
             <input name="guitar[id]" type="text" placeholder="BROKEN">
             <input type="submit" value="show a guitar">
           </fieldset>
-        </form>
+        </form> -->
 
       </div>
       <!-- END LEFT COLUMN -->

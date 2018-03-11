@@ -28,7 +28,6 @@ const signinFailure = function () {
 }
 
 const signoutSuccess = function () {
-  $('#feedback').html('Signed OUT successfully')
   $('.user-page').hide()
   $('#home-page').show()
   $('#display-message').html('')
@@ -40,12 +39,12 @@ const signoutSuccess = function () {
 // }
 
 const changePwSuccess = function () {
-  $('body').append('changed password successfully')
+  $('#feedback').html('changed password successfully')
   document.getElementById('changepw').reset()
 }
 
 const changePwFailure = function () {
-  $('body').append('password change FAILED')
+  $('#feedback').html('password change FAILED')
   document.getElementById('changepw').reset()
 }
 

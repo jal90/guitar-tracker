@@ -133,9 +133,9 @@
                 string guage:
                 <input name="guitar[string_guage]" type="text">
                 date of last string change:
-                <input name="guitar[last_string_change]" type="text">
+                <input name="guitar[last_string_change]" type="date" style="display: block;">
                 date of last setup:
-                <input name="guitar[last_setup]" type="text">
+                <input name="guitar[last_setup]" type="date" style="display: block;">
                 setup notes:
                 <input name="guitar[setup_notes]" type="text">
                 <div class="row">
@@ -214,12 +214,19 @@
       <div class="loginmodal-container">
         <form id="updateguitar">
           <legend> Update guitar</legend>
-          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make">
-          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model">
+          make (requied):
+          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" required>
+          model (required):
+          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" required>
+          string brand:
           <input id="string-brand" name="guitar[string_brand]" type="text" placeholder="string brand">
+          string guage:
           <input id="string-guage" name="guitar[string_guage]" type="text" placeholder="string guage">
-          <input id="last-string-change" name="guitar[last_string_change]" type="text" placeholder="last string change">
-          <input id="last-setup" name="guitar[last_setup]" type="text" placeholder="last setup">
+          last string change:
+          <input id="last-string-change" name="guitar[last_string_change]" type="date" placeholder="last string change">
+          last setup:
+          <input id="last-setup" name="guitar[last_setup]" type="date" placeholder="last setup">
+          setup notes:
           <input id="setup-notes" name="guitar[setup_notes]" type="text" placeholder="setup notes">
 
           <input id="update" type="submit" value="Update this guitar">

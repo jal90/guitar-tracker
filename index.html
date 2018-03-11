@@ -163,6 +163,16 @@
         <div id="display-message"></div>
         <div id="guitar-display" class="row">
           <!-- GUITARS GET LOADED IN HERE -->
+          <!-- DELETE CONFIRMATION MODAL -->
+            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog">
+                <div class="loginmodal-container">
+                  <h1>Are you sure you want to delete this guitar?</h1><br>
+                    <input id="delete" type="submit" value="Yes">
+                    <input data-toggle="modal" data-target="#delete-modal" type="submit" value="No">
+                </div>
+              </div>
+            </div>
         </div>
       </div>
 

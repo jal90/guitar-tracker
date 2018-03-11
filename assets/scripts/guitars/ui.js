@@ -1,7 +1,7 @@
 const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
 
 const createGuitarSuccess = function () {
-  $('body').append('Created guitar successfully')
+  // $('body').append('Created guitar successfully')
   document.getElementById('createguitar').reset()
 }
 

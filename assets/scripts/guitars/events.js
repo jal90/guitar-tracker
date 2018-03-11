@@ -53,7 +53,7 @@ const onDeleteCheck = (event) => {
   event.preventDefault()
 
   dataId = $(event.target).attr('data-id')
-  $('#delete-modal').modal('show')
+  // $('#delete-modal').modal('toggle')
   console.log('dataId is ', dataId)
 }
 

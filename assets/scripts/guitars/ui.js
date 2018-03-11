@@ -1,13 +1,14 @@
 const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
+const store = require('../store')
 
 const createGuitarSuccess = function () {
   // $('body').append('Created guitar successfully')
   document.getElementById('createguitar').reset()
 }
 
-// createGuitarFailure unecessary since I'm catching errors on the front end
+// this functionality is currently being handled in events.js
 // const createGuitarFailure = function () {
-//   $('body').append('Create guitar FAILED')
+//   $('#createguitar').append('Create guitar FAILED')
 //   document.getElementById('createguitar').reset()
 // }
 
@@ -31,11 +32,14 @@ const showGuitarSuccess = function (data) {
   for (const key in data.guitar) {
     $('body').append(key + ': ' + data.guitar[key] + '</br>')
   }
+  store.guitar = data.guitar
+
   document.getElementById('showguitar').reset()
 }
 
 const updateGuitarSuccess = function () {
-  $('body').append('Updated guitar successfully')
+  $('#update-modal').modal('hide')
+  $('#update-success').modal('show')
   document.getElementById('updateguitar').reset()
 }
 
@@ -44,15 +48,10 @@ const updateGuitarFailure = function () {
   document.getElementById('updateguitar').reset()
 }
 
-// function unnecessary, as ui feedback is handled in events.js
-// const deleteGuitarSuccess = function () {
-// }
-
 // function unnecessary because deleting will never fail (option only shows up on existing guitars)
-// const deleteGuitarFailure = function () {
-//   $('body').append('Delete guitar FAILED')
-//   document.getElementById('deleteguitar').reset()
-// }
+const deleteGuitarFailure = function () {
+  $('body').append('You somehow managed to break the site. Contgratulations. Delete guitar FAILED')
+}
 
 module.exports = {
   createGuitarSuccess,
@@ -60,7 +59,6 @@ module.exports = {
   getGuitarsSuccess,
   showGuitarSuccess,
   updateGuitarSuccess,
-  updateGuitarFailure
-  // deleteGuitarSuccess,
-  // deleteGuitarFailure
+  updateGuitarFailure,
+  deleteGuitarFailure
 }

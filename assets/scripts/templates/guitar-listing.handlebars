@@ -24,7 +24,7 @@ clickable, but the message should probably be in ui.js, not here-->
       <!-- <button id="updateGuitarButton" class="btn btn-default update">Update this guitar</button>
         <button id="deleteGuitarButton" class="btn btn-default delete">Delete this guitar</button> -->
       <!-- {{/if}} -->
-      <button id="updateGuitarButton" class="btn btn-default">Update this guitar</button>
+      <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#update-modal" class="btn btn-default updateGuitarButton">Update this guitar</button>
       <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#delete-modal" class="btn btn-default deleteGuitarButton">Delete this guitar</button>
       <!-- <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a> -->
 

@@ -25,7 +25,6 @@ const getGuitars = function () {
 }
 
 const showGuitar = function (data) {
-  // console.log('data.guitar.id is ', data.guitar.id)
   return $.ajax({
     url: config.apiOrigin + '/guitars/' + data.guitar.id,
     method: 'GET',
@@ -36,10 +35,9 @@ const showGuitar = function (data) {
   })
 }
 
-const updateGuitar = function (data) {
-  console.log('data.guitar.id is', data.guitar.id)
+const updateGuitar = function (data, id) {
   return $.ajax({
-    url: config.apiOrigin + '/guitars/' + data.guitar.id,
+    url: config.apiOrigin + '/guitars/' + id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',

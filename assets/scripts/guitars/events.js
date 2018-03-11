@@ -1,6 +1,7 @@
 const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
+const store = require('../store')
 
 let dataId = 0
 
@@ -40,34 +41,58 @@ const onShowGuitar = (event) => {
     .then(ui.showGuitarSuccess)
 }
 
+const onUpdateCheck = (event) => {
+  event.preventDefault()
+
+  dataId = $(event.target).attr('data-id')
+
+  // TODO right now this works only after a GET show request (which stores that guitar's data in the store)
+  // idea 1: fix it so that the show request happens when you click on "update guitar"
+  // idea 2: build the 'expanded view' where the buttons are located, and that'll do the get request
+  console.log('store.guitar is ', store.guitar)
+  console.log('dataId is ', dataId)
+}
+
 const onUpdateGuitar = (event) => {
   event.preventDefault()
 
-  const data = getFormFields(event.target)
-  api.updateGuitar(data) // (data)
-    .then(ui.updateGuitarSuccess)
-    .catch(ui.updateGuitarFailure)
+
+  const updateData = getFormFields(event.target)
+  console.log(updateData.guitar)
+
+  // console.log(data)
+  // for (const key in updateData) {
+  //   if (updateData[key] !== '') {
+  //
+  //   }
+  // }
+
+
+
+  // const guitData = {}
+
+  // const data = getFormFields(event.target)
+  // console.log('data is ', data)
+  // api.updateGuitar(data, dataId)
+  //   .then(ui.updateGuitarSuccess)
+
+
+  //   .catch(ui.updateGuitarFailure)
 }
 
 const onDeleteCheck = (event) => {
   event.preventDefault()
 
   dataId = $(event.target).attr('data-id')
-  // $('#delete-modal').modal('toggle')
-  console.log('dataId is ', dataId)
 }
 
-// TODO get modal to come back a second time after deleting guitar
 const onDeleteGuitar = () => {
-  // event.preventDefault()
-
-  const thiss = $('[data-id=' + dataId + ']')
-  $(thiss).fadeOut(1000)
+  const deletedGuitar = $('[data-id=' + dataId + ']')
 
   api.deleteGuitar(dataId)
     .then($('#delete-modal').modal('toggle'))
-    // .then($(event.target).parent().fadeOut(1000))
-    // .catch(ui.deleteGuitarFailure)
+    .then($(deletedGuitar).fadeOut(1000))
+    .catch(ui.deleteGuitarFailure)
 }
 
 const addHandlers = () => {
@@ -75,10 +100,12 @@ const addHandlers = () => {
   $('#guitarsindex').on('submit', onGetGuitars)
   $('#updateguitar').on('submit', onUpdateGuitar)
   $('body').on('click', '.deleteGuitarButton', onDeleteCheck)
+  $('body').on('click', '.updateGuitarButton', onUpdateCheck)
   $('body').on('click', '#delete', onDeleteGuitar)
   $('#showguitar').on('submit', onShowGuitar)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  dataId
 }

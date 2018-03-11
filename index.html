@@ -131,21 +131,7 @@
         </form>
 
 
-        <form id="updateguitar">
-          <fieldset>
-            <legend> Update a guitar</legend>
-            <input name="guitar[id]" type="text" placeholder="id">
-            <input name="guitar[make]" type="text" placeholder="make">
-            <input name="guitar[model]" type="text" placeholder="model">
-            <input name="guitar[string_brand]" type="text" placeholder="string brand">
-            <input name="guitar[string_guage]" type="text" placeholder="string guage">
-            <input name="guitar[last_string_change]" type="text" placeholder="last string change">
-            <input name="guitar[last_setup]" type="text" placeholder="last setup">
-            <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
 
-            <input type="submit" value="Update a guitar">
-          </fieldset>
-        </form>
 
         <form id="showguitar">
           <fieldset>
@@ -184,7 +170,39 @@
         </div>
       </div>
     </div>
+<!-- END DELETE CONFIRMATION MODAL -->
 
+
+<!-- UPDATE GUITAR MODAL -->
+<div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <form id="updateguitar">
+          <legend> Update guitar</legend>
+          <input name="guitar[make]" type="text" placeholder="make">
+          <input name="guitar[model]" type="text" placeholder="model">
+          <input name="guitar[string_brand]" type="text" placeholder="string brand">
+          <input name="guitar[string_guage]" type="text" placeholder="string guage">
+          <input name="guitar[last_string_change]" type="text" placeholder="last string change">
+          <input name="guitar[last_setup]" type="text" placeholder="last setup">
+          <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
+
+          <input id="update" type="submit" value="Update this guitar">
+      </form>
+        <input data-toggle="modal" data-target="#update-modal" type="submit" value="Close">
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="update-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h1>Success!</h1>
+        <input data-toggle="modal" data-target="#update-success" type="submit" value="Close">
+    </div>
+  </div>
+</div>
 
 
 </body>

@@ -71,13 +71,10 @@ const onUpdateGuitar = (event) => {
   //   .catch(ui.updateGuitarFailure)
 }
 
-const onDeleteCheck = (event) => {
-  event.preventDefault()
-
-  dataId = store.guitar.id
-}
 
 const onDeleteGuitar = () => {
+  dataId = store.guitar.id
+
   const deletedGuitar = $('[data-id=' + dataId + ']')
 
   api.deleteGuitar(dataId)
@@ -90,7 +87,6 @@ const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
   $('#guitarsindex').on('submit', onGetGuitars)
   $('#updateguitar').on('submit', onUpdateGuitar)
-  $('body').on('click', '.deleteGuitarButton', onDeleteCheck)
   $('body').on('click', '.updateGuitarButton', onUpdateCheck)
   $('body').on('click', '#delete', onDeleteGuitar)
   $('body').on('click', '.expandButton', onShowGuitar)

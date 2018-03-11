@@ -64,7 +64,7 @@ const onUpdateGuitar = (event) => {
 
   api.updateGuitar(dataId, updateData)
     .then(ui.updateGuitarSuccess)
-    // .catch(ui.updateGuitarFailure)
+    .catch(ui.updateGuitarFailure)
 }
 
 const onDeleteGuitar = () => {
@@ -81,6 +81,7 @@ const onDeleteGuitar = () => {
 const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
   $('#guitarsindex').on('submit', onGetGuitars)
+  $('#showguitar').on('submit', onShowGuitar)
   $('body').on('click', '.updateGuitarButton', populateUpdateData)
   $('#updateguitar').on('submit', onUpdateGuitar)
   $('body').on('click', '#delete', onDeleteGuitar)

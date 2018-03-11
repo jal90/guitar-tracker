@@ -41,7 +41,7 @@ const updateGuitarSuccess = function () {
 }
 
 const updateGuitarFailure = function () {
-  $('body').append('Updated guitar FAILED')
+  $('body').append('Updated guitar FAILED Somehow???')
   document.getElementById('updateguitar').reset()
 }
 

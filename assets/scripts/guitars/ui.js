@@ -22,9 +22,6 @@ const getGuitarsSuccess = function (data) {
   } else {
     $('#display-message').html('Click on a guitar to see expanded view')
     $('#guitar-display').html(showGuitarsHTML)
-    // data.guitars.forEach(x => {
-    //   $('#guitar-display').html(Object.values(x) + '</br>')
-    // })
   }
 }
 
@@ -33,18 +30,12 @@ const showGuitarSuccess = function (data) {
   const getGuitarHTML = getGuitarTemplate({ guitar: data.guitar })
   $('#guitar-details').html(getGuitarHTML)
 
-
-
-  // for (const key in data.guitar) {
-  //   $('#guitar-details').html(key + ': ' + data.guitar[key] + '</br>')
-  // }
   store.guitar = data.guitar
-
-  document.getElementById('showguitar').reset()
 }
 
 const updateGuitarSuccess = function () {
   $('#update-modal').modal('hide')
+  $('#expand-modal').modal('hide')
   $('#update-success').modal('show')
   document.getElementById('updateguitar').reset()
 }

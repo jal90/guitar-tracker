@@ -181,7 +181,7 @@
     <div class="modal-dialog">
       <div class="loginmodal-container">
         <h1>Are you sure you want to delete this guitar?</h1><br>
-        <input id="delete" type="submit" value="Yes">
+        <input data-toggle="modal" data-target="#expand-modal" id="delete" type="submit" value="Yes">
         <input data-toggle="modal" data-target="#delete-modal" type="submit" value="No">
       </div>
     </div>
@@ -195,13 +195,13 @@
       <div class="loginmodal-container">
         <form id="updateguitar">
           <legend> Update guitar</legend>
-          <input name="guitar[make]" type="text" placeholder="make">
-          <input name="guitar[model]" type="text" placeholder="model">
-          <input name="guitar[string_brand]" type="text" placeholder="string brand">
-          <input name="guitar[string_guage]" type="text" placeholder="string guage">
-          <input name="guitar[last_string_change]" type="text" placeholder="last string change">
-          <input name="guitar[last_setup]" type="text" placeholder="last setup">
-          <input name="guitar[setup_notes]" type="text" placeholder="setup notes">
+          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make">
+          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model">
+          <input id="string-brand" name="guitar[string_brand]" type="text" placeholder="string brand">
+          <input id="string-guage" name="guitar[string_guage]" type="text" placeholder="string guage">
+          <input id="last-string-change" name="guitar[last_string_change]" type="text" placeholder="last string change">
+          <input id="last-setup" name="guitar[last_setup]" type="text" placeholder="last setup">
+          <input id="setup-notes" name="guitar[setup_notes]" type="text" placeholder="setup notes">
 
           <input id="update" type="submit" value="Update this guitar">
         </form>
@@ -214,7 +214,7 @@
   <div class="modal fade" id="update-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
       <div class="loginmodal-container">
-        <h1>Success!</h1>
+        <h1>Success! Refresh catalog to see changes</h1>
         <input data-toggle="modal" data-target="#update-success" type="submit" value="Close">
       </div>
     </div>

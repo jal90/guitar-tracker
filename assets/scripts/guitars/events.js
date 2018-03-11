@@ -41,36 +41,31 @@ const onShowGuitar = (event) => {
     .then(ui.showGuitarSuccess)
 }
 
-const onUpdateCheck = (event) => {
+const populateUpdateData = (event) => {
   event.preventDefault()
 
-  dataId = store.guitar.id
+  const guitar = store.guitar
+  $('#guitar-make').val(guitar.make)
+  $('#guitar-model').val(guitar.model)
+  $('#string-brand').val(guitar.string_brand)
+  $('#string-guage').val(guitar.string_guage)
+  $('#last-string-change').val(guitar.last_string_change)
+  $('#last-setup').val(guitar.last_setup)
+  $('#setup-notes').val(guitar.setup_notes)
 }
 
 const onUpdateGuitar = (event) => {
   event.preventDefault()
 
+  dataId = store.guitar.id
+
   const updateData = getFormFields(event.target)
-  console.log(updateData.guitar)
+  console.log(updateData)
 
-  // console.log(data)
-  // for (const key in updateData) {
-  //   if (updateData[key] !== '') {
-  //
-  //   }
-  // }
-
-  // const guitData = {}
-
-  // const data = getFormFields(event.target)
-  // console.log('data is ', data)
-  // api.updateGuitar(data, dataId)
-  //   .then(ui.updateGuitarSuccess)
-
-
-  //   .catch(ui.updateGuitarFailure)
+  api.updateGuitar(dataId, updateData)
+    .then(ui.updateGuitarSuccess)
+    // .catch(ui.updateGuitarFailure)
 }
-
 
 const onDeleteGuitar = () => {
   dataId = store.guitar.id
@@ -86,13 +81,14 @@ const onDeleteGuitar = () => {
 const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
   $('#guitarsindex').on('submit', onGetGuitars)
+  $('body').on('click', '.updateGuitarButton', populateUpdateData)
   $('#updateguitar').on('submit', onUpdateGuitar)
-  $('body').on('click', '.updateGuitarButton', onUpdateCheck)
   $('body').on('click', '#delete', onDeleteGuitar)
   $('body').on('click', '.expandButton', onShowGuitar)
 }
 
 module.exports = {
   addHandlers,
+  // I think I don't need to export dataId. It was being used in ui, look there
   dataId
 }

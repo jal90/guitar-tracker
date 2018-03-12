@@ -20,6 +20,7 @@ const getGuitarsSuccess = function (data) {
     $('#display-message').html('Create some guitars first!')
   } else {
     $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
+    $('#display-message').html('')
   }
 }
 

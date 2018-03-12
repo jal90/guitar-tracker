@@ -19,8 +19,7 @@ const getGuitarsSuccess = function (data) {
   if (data.guitars.length === 0) {
     $('#display-message').html('Create some guitars first!')
   } else {
-    $('#display-message').html('Click on a guitar to see expanded view')
-    $('#guitar-display').html(showGuitarsHTML)
+    $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
   }
 }
 

@@ -18,7 +18,8 @@ const signinSuccess = function (data) {
   $('#login-modal').modal('toggle')
   $('#signup-feedback').html('')
   $('#signup-signin').html('')
-  $('#welcome').html(data.user.email.charAt(0).toUpperCase() + data.user.email.slice(1) + '!')
+  const displayName = data.user.email.slice(1).split('@')[0]
+  $('#welcome').html(data.user.email.charAt(0).toUpperCase() + displayName + '!')
   store.user = data.user
   document.getElementById('signin').reset()
 }

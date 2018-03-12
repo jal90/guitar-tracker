@@ -3,11 +3,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: #aaa;
+  background-color: #def;
 }
 
 h1 {
   text-align: center;
+}
+
+.left {
+  background-color: #ddf;
+}
+
+.right {
+  background-color: #ffd;
 }
 
 p {
@@ -42,7 +50,7 @@ input[type=number] {
 
 .spaced {
   margin-bottom: 15px;
-  border: dotted black 1px;
+  border: solid yellow 1px;
 }
 
 .modal-container {

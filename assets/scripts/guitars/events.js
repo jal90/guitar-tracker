@@ -49,7 +49,6 @@ const onUpdateGuitar = (event) => {
   dataId = store.guitar.id
 
   const updateData = getFormFields(event.target)
-  console.log(updateData)
 
   api.updateGuitar(dataId, updateData)
     .then(ui.updateGuitarSuccess)

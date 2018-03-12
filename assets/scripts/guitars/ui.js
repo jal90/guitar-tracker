@@ -14,7 +14,6 @@ const createGuitarFailure = function () {
 }
 
 const getGuitarsSuccess = function (data) {
-  console.log('datais', data)
   const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
 
   if (data.guitars.length === 0) {
@@ -26,7 +25,6 @@ const getGuitarsSuccess = function (data) {
 }
 
 const showGuitarSuccess = function (data) {
-  console.log('data.guitar is ', data.guitar)
   const getGuitarHTML = getGuitarTemplate({ guitar: data.guitar })
   $('#guitar-details').html(getGuitarHTML)
 

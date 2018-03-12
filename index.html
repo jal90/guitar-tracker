@@ -22,7 +22,7 @@
 <body class="container-fluid">
   <div id="home-page">
     <h1>Welcome to Guitar Tracker</h1>
-    <p> Hey, you! You're a guitarist, right? Stop and think right now: when was the last time you changed the strings on your main guitar?
+    <p class="intro"> Hey, you! You're a guitarist, right? Stop and think right now: when was the last time you changed the strings on your main guitar?
       How about on that old acoustic you play around campfires in the summer? When was the last time you had it properly set up?
       If you're having trouble answering these questions, you've come to the right place. This webapp serves as a database for your guitars.
       Gone are the days of instrument abuse and neglect. Take the first step to healthier, happier instruments. Sign up now!
@@ -103,14 +103,13 @@
 
         <form id="signout">
           <fieldset>
-            <legend> Sign out</legend>
             <input type="submit" value="Sign Out">
           </fieldset>
         </form>
 
         <form id="changepw">
           <fieldset>
-            <legend> Change your password</legend>
+            Change your password
             <input name="passwords[old]" type="password" placeholder="current password">
             <input name="passwords[new]" type="password" placeholder="new password">
             <input type="submit" value="Change password">

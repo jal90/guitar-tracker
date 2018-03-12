@@ -2,13 +2,13 @@ const store = require('../store')
 
 const signupSuccess = function () {
   $('#signup-modal').modal('toggle')
-  $('#signup-feedback').html('Signed up successfully - now please sign in')
+  $('#signup-signin').html('Signed up successfully - now please sign in')
+  $('#login-modal').modal('toggle')
   document.getElementById('signup').reset()
 }
 
 const signupFailure = function () {
   $('.signup-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
-  // $('body').append('Sign up FAILED')
   document.getElementById('signup').reset()
 }
 
@@ -17,6 +17,7 @@ const signinSuccess = function (data) {
   $('#home-page').hide()
   $('#login-modal').modal('toggle')
   $('#signup-feedback').html('')
+  $('#signup-signin').html('')
   $('#welcome').html(data.user.email.charAt(0).toUpperCase() + data.user.email.slice(1) + '!')
   store.user = data.user
   document.getElementById('signin').reset()
@@ -24,7 +25,7 @@ const signinSuccess = function (data) {
 
 const signinFailure = function () {
   $('.login-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
-  // $('body').append('Sign IN FAILED')
+  $('#signup-signin').html('')
   document.getElementById('signin').reset()
 }
 

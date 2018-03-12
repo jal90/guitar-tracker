@@ -37,7 +37,7 @@
       <!-- LOG IN MODAL -->
       <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
-          <div class="loginmodal-container">
+          <div class="modal-container">
             <h1>Log in to Your Account</h1><br>
 
             <form id="signin">
@@ -59,7 +59,7 @@
       <!-- SIGN UP MODAL -->
       <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
-          <div class="loginmodal-container">
+          <div class="modal-container">
             <h1>Sign up for guitar tracker</h1><br>
 
             <form id="signup">
@@ -122,13 +122,13 @@
 
         <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
           <div class="modal-dialog">
-            <div class="loginmodal-container">
+            <div class="modal-container">
               <form id="createguitar" class="createguitar">
                 <legend> Create Guitar</legend>
                 make (required):
-                <input name="guitar[make]" type="text" required>
+                <input name="guitar[make]" type="text" maxlength="17" required>
                 model (required):
-                <input name="guitar[model]" type="text" required>
+                <input name="guitar[model]" type="text" maxlength="17" required>
                 string brand:
                 <input name="guitar[string_brand]" type="text">
                 string guage:
@@ -185,7 +185,7 @@
   <!-- EXPANDED VIEW MODAL -->
   <div class="modal fade" id="expand-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-      <div class="loginmodal-container">
+      <div class="modal-container">
         <ul id="guitar-details">
           <!-- Details get loaded into here -->
 
@@ -199,7 +199,7 @@
   <!-- DELETE CONFIRMATION MODAL -->
   <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-      <div class="loginmodal-container">
+      <div class="modal-container">
         <h1>Are you sure you want to delete this guitar?</h1><br>
         <input data-toggle="modal" data-target="#expand-modal" id="delete" type="submit" value="Yes">
         <input data-toggle="modal" data-target="#delete-modal" type="submit" value="No">
@@ -212,13 +212,13 @@
   <!-- UPDATE GUITAR MODAL -->
   <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-      <div class="loginmodal-container">
+      <div class="modal-container">
         <form id="updateguitar">
           <legend> Update guitar</legend>
           make (requied):
-          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" required>
+          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" maxlength="17" required>
           model (required):
-          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" required>
+          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" maxlength="17" required>
           string brand:
           <input id="string-brand" name="guitar[string_brand]" type="text" placeholder="string brand">
           string guage:
@@ -240,7 +240,7 @@
   <!-- UPDATE SUCCESS MODAL -->
   <div class="modal fade" id="update-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-      <div class="loginmodal-container">
+      <div class="modal-container">
         <h1>Success! Refresh catalog to see changes</h1>
         <input data-toggle="modal" data-target="#update-success" type="submit" value="Close">
       </div>

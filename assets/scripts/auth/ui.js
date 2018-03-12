@@ -33,6 +33,7 @@ const signoutSuccess = function () {
   $('#home-page').show()
   $('#display-message').html('')
   $('#guitar-display').html('')
+  $('#feedback').html('')
 }
 
 // const signoutFailure = function () {

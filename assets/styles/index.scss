@@ -45,7 +45,7 @@ input[type=number] {
   border: dotted black 1px;
 }
 
-.loginmodal-container {
+.modal-container {
   padding: 30px;
   max-width: 350px;
   width: 100%;
@@ -56,20 +56,21 @@ input[type=number] {
   overflow: hidden;
 }
 
-.loginmodal-container h1 {
+.modal-container h1 {
   text-align: center;
   font-size: 1.8em;
 }
 
-.loginmodal-container input[type=submit] {
+.modal-container input[type=submit] {
   width: 100%;
   display: block;
   margin-bottom: 10px;
   position: relative;
 }
 
-.loginmodal-container input[type=text],
-input[type=password] {
+.modal-container input[type=text],
+input[type=password],
+input[type=email] {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -83,7 +84,7 @@ input[type=password] {
   -moz-box-sizing: border-box;
 }
 
-.loginmodal-container input[type=text]:hover,
+.modal-container input[type=text]:hover,
 input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;

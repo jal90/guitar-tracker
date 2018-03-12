@@ -8,7 +8,6 @@ const createGuitarSuccess = function () {
   document.getElementById('createguitar').reset()
 }
 
-
 const createGuitarFailure = function () {
   $('#createguitar').append('Create guitar FAILED SOMEHOW???')
   document.getElementById('createguitar').reset()

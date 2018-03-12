@@ -12,6 +12,8 @@ const onCreateGuitar = (event) => {
 
   api.createGuitar(data)
     .then(ui.createGuitarSuccess)
+    .then(() => api.getGuitars(event))
+    .then(ui.getGuitarsSuccess)
     .catch(ui.createGuitarFailure)
 }
 
@@ -52,6 +54,8 @@ const onUpdateGuitar = (event) => {
 
   api.updateGuitar(dataId, updateData)
     .then(ui.updateGuitarSuccess)
+    .then(() => api.getGuitars(event))
+    .then(ui.getGuitarsSuccess)
     .catch(ui.updateGuitarFailure)
 }
 

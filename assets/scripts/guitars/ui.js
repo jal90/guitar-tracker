@@ -1,6 +1,7 @@
 const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
 const getGuitarTemplate = require('../templates/guitar-show.handlebars')
 const store = require('../store')
+const events = require('./events')
 
 const createGuitarSuccess = function () {
   $('#create-modal').modal('hide')

@@ -13,9 +13,6 @@ const onSignup = (event) => {
   api.signup(data)
     .then(ui.signupSuccess)
     .catch(ui.signupFailure)
-  api.update(newUser)
-    .then(ui.newUserSuccess)
-    .catch(ui.newUserFailure)
 }
 
 const onSignin = (event) => {

@@ -12,18 +12,6 @@ const signup = function (data) {
   })
 }
 
-const update = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/users/update',
-    method: 'PATCH',
-    headers: {
-      contentType: 'application/json',
-      Authorization: 'Token token=' + store.user.token
-    },
-    'credentials': data
-  })
-}
-
 const signin = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
@@ -63,6 +51,5 @@ module.exports = {
   signup,
   signin,
   signout,
-  changePw,
-  update
+  changePw
 }

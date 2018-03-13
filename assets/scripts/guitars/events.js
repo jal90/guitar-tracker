@@ -85,5 +85,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onGetGuitars
+  onGetGuitars,
+  newUser
 }

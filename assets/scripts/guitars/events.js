@@ -9,7 +9,6 @@ const onCreateGuitar = (event) => {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  store.newUser = 'no'
 
   api.createGuitar(data)
     .then(ui.createGuitarSuccess)
@@ -85,6 +84,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onGetGuitars,
-  newUser
+  onGetGuitars
 }

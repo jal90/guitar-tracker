@@ -36,6 +36,7 @@ const showGuitar = function (id) {
 }
 
 const updateGuitar = function (id, data) {
+  console.log('data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/guitars/' + id,
     method: 'PATCH',

@@ -1,10 +1,12 @@
 const store = require('../store')
 
-const signupSuccess = function () {
+const signupSuccess = function (data) {
   $('#signup-modal').modal('toggle')
   $('#signup-signin').html('Signed up successfully - now please sign in')
   $('#login-modal').modal('toggle')
   document.getElementById('signup').reset()
+  data.user.new = 'yes'
+  console.log('data.user.new is ', data.user.new)
 }
 
 const signupFailure = function () {

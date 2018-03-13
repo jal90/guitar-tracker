@@ -17,7 +17,7 @@ const getGuitarsSuccess = function (data) {
   const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
 
   if (data.guitars.length === 0) {
-    $('#display-message').html('Create some guitars first!')
+    $('#guitar-display').html('Your catalog is empty. When you\'ve made guitars they\'ll show up here. Click \'Create Guitar\' to get started')
   } else {
     $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
     $('#display-message').html('')

@@ -82,6 +82,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  // I think I don't need to export dataId. It was being used in ui, look there
-  dataId
+  onGetGuitars
 }

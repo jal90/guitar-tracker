@@ -1,6 +1,7 @@
 const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
+const guitarEvents = require('../guitars/events.js')
 
 const onSignup = (event) => {
   event.preventDefault()
@@ -15,6 +16,7 @@ const onSignin = (event) => {
   const data = getFormFields(event.target)
   api.signin(data)
     .then(ui.signinSuccess)
+    .then(() => guitarEvents.onGetGuitars(event))
     .catch(ui.signinFailure)
 }
 

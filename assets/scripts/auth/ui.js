@@ -36,6 +36,8 @@ const signoutSuccess = function () {
   $('#display-message').html('')
   $('#guitar-display').html('')
   $('#feedback').html('')
+  document.getElementById('updateguitar').reset()
+  document.getElementById('createguitar').reset()
 }
 
 const changePwSuccess = function () {

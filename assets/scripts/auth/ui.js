@@ -5,8 +5,6 @@ const signupSuccess = function (data) {
   $('#signup-signin').html('Signed up successfully - now please sign in')
   $('#login-modal').modal('toggle')
   document.getElementById('signup').reset()
-  data.user.new = 'yes'
-  console.log('data.user.new is ', data.user.new)
 }
 
 const signupFailure = function () {

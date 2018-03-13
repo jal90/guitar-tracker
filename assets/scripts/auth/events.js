@@ -6,6 +6,7 @@ const guitarEvents = require('../guitars/events.js')
 const onSignup = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  data.credentials.new = 'yes'
   api.signup(data)
     .then(ui.signupSuccess)
     .catch(ui.signupFailure)

@@ -2,6 +2,7 @@ const config = require('../config')
 const store = require('../store')
 
 const signup = function (data) {
+  console.log('inside signup API, data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',

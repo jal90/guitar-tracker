@@ -2,14 +2,20 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 const guitarEvents = require('../guitars/events.js')
+const store = require('../store.js')
 
 const onSignup = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   data.credentials.new = 'yes'
+  const newUser = data.credentials.new
+  console.log('newUser is ', newUser)
   api.signup(data)
     .then(ui.signupSuccess)
     .catch(ui.signupFailure)
+  api.update(newUser)
+    .then(ui.newUserSuccess)
+    .catch(ui.newUserFailure)
 }
 
 const onSignin = (event) => {
@@ -23,9 +29,13 @@ const onSignin = (event) => {
 
 const onSignout = (event) => {
   event.preventDefault()
-  api.signout()
-    .then(ui.signoutSuccess)
-    .catch(ui.signoutFailure)
+
+  // data.credentials.new = store.newUser
+  console.log('in auth events, store.user is ', store.user)
+
+  // api.signout()
+  //   .then(ui.signoutSuccess)
+  //   .catch(ui.signoutFailure)
 }
 
 const onChangePw = (event) => {

@@ -2,7 +2,6 @@ const config = require('../config')
 const store = require('../store')
 
 const signup = function (data) {
-  console.log('inside signup API, data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -10,6 +9,18 @@ const signup = function (data) {
       contentType: 'application/json'
     },
     data
+  })
+}
+
+const update = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/users/update',
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    'credentials': data
   })
 }
 
@@ -52,5 +63,6 @@ module.exports = {
   signup,
   signin,
   signout,
-  changePw
+  changePw,
+  update
 }

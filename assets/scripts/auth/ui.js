@@ -5,6 +5,7 @@ const signupSuccess = function (data) {
   $('#signup-signin').html('Signed up successfully - now please sign in')
   $('#login-modal').modal('toggle')
   document.getElementById('signup').reset()
+  console.log('inside signupSuccess, data.user is', data.user)
 }
 
 const signupFailure = function () {
@@ -21,6 +22,8 @@ const signinSuccess = function (data) {
   const displayName = data.user.email.slice(1).split('@')[0]
   $('#welcome').html(data.user.email.charAt(0).toUpperCase() + displayName + '!')
   store.user = data.user
+  console.log('inside signinSuccess, data.user is', data.user)
+  console.log('inside signinSuccess, store.user is', store.user)
   document.getElementById('signin').reset()
 }
 
@@ -42,6 +45,14 @@ const signoutSuccess = function () {
 //   $('body').append('Sign OUT FAILED')
 // }
 
+const newUserSuccess = function (data) {
+  console.log('inside newUserSuccess, data is ', data)
+}
+
+const newUserFailure = function (data) {
+  console.log('inside newUserFailure, data is ', data)
+}
+
 const changePwSuccess = function () {
   $('#feedback').html('changed password successfully')
   document.getElementById('changepw').reset()
@@ -60,5 +71,7 @@ module.exports = {
   signoutSuccess,
   // signoutFailure,
   changePwSuccess,
-  changePwFailure
+  changePwFailure,
+  newUserSuccess,
+  newUserFailure
 }

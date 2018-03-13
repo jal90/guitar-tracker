@@ -11,19 +11,7 @@ const getUsers = function () {
     }
   })
 }
-//
-// const updateUser = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/users/',
-//     method: 'GET',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 
 module.exports = {
   getUsers
-  // updateUser
 }

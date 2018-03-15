@@ -34,6 +34,11 @@ I let the user choose how to enter. But maybe it should be normalized after a su
 * Implement drop-down lists for makes, models, and string brands, while including an 'other' input Âfield to cover all the bases.
 Makes wouldn't require too much work; neither would string brands. Models would be a longer process; though with the 'other' button there, I wouldn't have to sweat too much about including them all.
 
+
+* TOAST instead of success modal
+
+* update guitars in place so they don't move
+
 #### Wireframes:
 
 https://imgur.com/a/0diOM

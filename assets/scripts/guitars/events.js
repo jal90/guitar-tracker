@@ -73,6 +73,10 @@ const onDeleteGuitar = () => {
     .catch(ui.deleteGuitarFailure)
 }
 
+const onStuff = function () {
+  $('#intro').slideToggle('slow')
+}
+
 const addHandlers = () => {
   $('#createguitar').on('submit', onCreateGuitar)
   $('#guitarsindex').on('submit', onGetGuitars)
@@ -81,6 +85,7 @@ const addHandlers = () => {
   $('#updateguitar').on('submit', onUpdateGuitar)
   $('body').on('click', '#delete', onDeleteGuitar)
   $('body').on('click', '.expandButton', onShowGuitar)
+  $('#intro-toggle').on('click', onStuff)
 }
 
 module.exports = {

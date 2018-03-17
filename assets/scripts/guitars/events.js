@@ -67,6 +67,7 @@ const onDeleteGuitar = () => {
   api.deleteGuitar(dataId)
     .then($('#delete-modal').modal('toggle'))
     .then($(deletedGuitar).fadeOut(1000))
+    .then(ui.deleteGuitarSuccess)
     .then(() => api.getGuitars(event))
     .then(ui.getGuitarsSuccess)
     .catch(ui.deleteGuitarFailure)

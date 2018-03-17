@@ -71,6 +71,22 @@ const updateGuitarFailure = function () {
   document.getElementById('updateguitar').reset()
 }
 
+const deleteGuitarSuccess = function () {
+  $.toast({
+    // text: '',
+    heading: 'Deleted guitar',
+    icon: 'error',
+    showHideTransition: 'plain',
+    allowToastClose: true,
+    hideAfter: 3000,
+    stack: 5,
+    position: 'top-right',
+    textAlign: 'left',
+    loader: true,
+    loaderBg: '#9EC600'
+  })
+}
+
 // function unnecessary because deleting will never fail (option only shows up on existing guitars)
 const deleteGuitarFailure = function () {
   $('body').append('You somehow managed to break the site. Contgratulations. Delete guitar FAILED')
@@ -83,5 +99,6 @@ module.exports = {
   showGuitarSuccess,
   updateGuitarSuccess,
   updateGuitarFailure,
+  deleteGuitarSuccess,
   deleteGuitarFailure
 }

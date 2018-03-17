@@ -16,23 +16,35 @@
 
 
 <!-- START OF BODY -->
-
+<body class="container-fluid">
 <!-- START OF HOME PAGE -->
 
-<body class="container-fluid">
   <div id="home-page">
-    <h1>Welcome to Guitar Tracker</h1>
-    <p id="intro" class="intro"> Hey, you! You're a guitarist, right? Stop and think right now: <br>When was the last time you changed the strings on your guitar? <br>How about on that old acoustic you play around campfires in the summer? <br>When was the last time you had it properly set
+    <h1>Guitar Tracker</h1>
+
+    <!-- LOG IN and SIGN UP BUTTONS -->
+    <p class="intro">
+      <a class="left-butt" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+      <a class="right-butt" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+    </p>
+
+
+
+
+
+
+
+    <p class="intro">
+      <a href="#"id="intro-toggle">What is Guitar Tracker?</a>
+    </p>
+
+    <!-- DESCRIPTION TEXT -->
+    <p id="intro" class="intro intro-text"> Hey, you! You're a guitarist, right? Stop and think right now: <br>When was the last time you changed the strings on your guitar? <br>How about on that old acoustic you play around campfires in the summer? <br>When was the last time you had it properly set
       up? <br>If you're having trouble answering these questions, you've come to the right place. This webapp serves as a database for your guitars. Gone are the days of instrument abuse and neglect. <br>Take the first step to healthier, happier instruments.
       Sign up now!
     </p>
 
-    <!-- LOG IN and SIGN UP BUTTONS -->
-    <p class="intro">
-      <a href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
-      <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
-    </p>
-      <button id="intro-toggle">What is Guitar Tracker?</button>
+
 
     <!-- LOG IN MODAL -->
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

@@ -74,7 +74,7 @@ const onDeleteGuitar = () => {
 }
 
 const onStuff = function () {
-  $('#intro').slideToggle('slow')
+  $('#intro').slideToggle('400')
 }
 
 const addHandlers = () => {

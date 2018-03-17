@@ -1,11 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import './main.css';
 
 a {
-  // margin: 7vw;
+  /* // margin: 7vw; */
   margin: 0 auto;
-  // color: #012;
+
+  /* // color: #012; */
   color: white;
 }
 
@@ -23,7 +25,8 @@ h1 {
   margin-bottom: 7vh;
   font-size: 7em;
   color: #4e5f74;
-  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  /* // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .left-butt {
@@ -34,7 +37,7 @@ h1 {
   margin-left: 7vw;
 }
 
-// In case background image breaks/moves, these colors take over
+/* // In case background image breaks/moves, these colors take over */
 .left {
   background-color: #ddf;
 }
@@ -93,6 +96,10 @@ input[type=number] {
 
 .login-feedback {
   display: none;
+}
+
+label {
+  font-weight: normal;
 }
 
 .signup-feedback {

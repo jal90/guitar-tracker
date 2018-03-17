@@ -3,6 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import './main.css';
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 a {
   /* // margin: 7vw; */
   margin: 0 auto;
@@ -18,6 +23,11 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 0 -175px;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -37,6 +47,10 @@ h1 {
 //   background-position: -200px;
 // }
 
+.col {
+  text-align: center;
+}
+
 .left-butt {
   margin-right: 7vw;
 }
@@ -50,7 +64,7 @@ h1 {
 }
 
 .catalog {
-  background-color: #ffd;
+  background-color: blue;
 }
 
 p {
@@ -99,6 +113,7 @@ input[type=number] {
 
 .user-page {
   display: none;
+  width: 100%;
 }
 
 .login-feedback {
@@ -120,6 +135,10 @@ label {
 .spaced {
   padding: 15px;
   border: solid yellow 1px;
+}
+
+.row {
+  margin: 0;
 }
 
 .modal-container {

@@ -29,6 +29,14 @@ h1 {
   /* // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
+// A background image for modal. May come back to this idea
+// .create {
+//   background-image: url('https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bb892f8f4973cf37f34681d40544efc&auto=format&fit=crop&w=1050&q=80');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: -200px;
+// }
+
 .left-butt {
   margin-right: 7vw;
 }
@@ -37,12 +45,11 @@ h1 {
   margin-left: 7vw;
 }
 
-/* // In case background image breaks/moves, these colors take over */
-.left {
+.user-options {
   background-color: #ddf;
 }
 
-.right {
+.catalog {
   background-color: #ffd;
 }
 
@@ -152,6 +159,8 @@ input[type=email] {
   padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  // background-color: #4e5f74;
+  // color: white;
 }
 
 .modal-container input[type=text]:hover,

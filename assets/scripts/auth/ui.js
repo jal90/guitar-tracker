@@ -5,11 +5,13 @@ const signupSuccess = function (data) {
   $('#signup-signin').html('Signed up successfully - now please sign in')
   $('#login-modal').modal('toggle')
   document.getElementById('signup').reset()
+  document.getElementById('signin').reset()
 }
 
 const signupFailure = function () {
   $('.signup-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
   document.getElementById('signup').reset()
+  document.getElementById('signin').reset()
 }
 
 const signinSuccess = function (data) {
@@ -22,12 +24,14 @@ const signinSuccess = function (data) {
   $('#welcome').html(data.user.email.charAt(0).toUpperCase() + displayName + '!')
   store.user = data.user
   document.getElementById('signin').reset()
+  document.getElementById('signup').reset()
 }
 
 const signinFailure = function () {
   $('.login-feedback').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
   $('#signup-signin').html('')
   document.getElementById('signin').reset()
+  document.getElementById('signup').reset()
 }
 
 const signoutSuccess = function () {
@@ -38,6 +42,7 @@ const signoutSuccess = function () {
   $('#feedback').html('')
   document.getElementById('updateguitar').reset()
   document.getElementById('createguitar').reset()
+  document.getElementById('changepw').reset()
 }
 
 const changePwSuccess = function () {

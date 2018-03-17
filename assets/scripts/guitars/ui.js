@@ -1,10 +1,25 @@
 const showGuitarsTemplate = require('../templates/guitar-listing.handlebars')
 const getGuitarTemplate = require('../templates/guitar-show.handlebars')
 const store = require('../store')
+require('../../../node_modules/jquery-toast-plugin/src/jquery.toast.js')
+require('../../../node_modules/jquery-toast-plugin/src/jquery.toast.css')
 
 const createGuitarSuccess = function () {
   $('#create-modal').modal('hide')
-  $('#update-success').modal('show')
+  // $('#update-success').modal('show')
+  $.toast({
+    // text: '',
+    heading: 'Successfully created new guitar',
+    icon: 'success',
+    showHideTransition: 'plain',
+    allowToastClose: true,
+    hideAfter: 3000,
+    stack: 5,
+    position: 'top-right',
+    textAlign: 'left',
+    loader: true,
+    loaderBg: '#9EC600'
+  })
   document.getElementById('createguitar').reset()
 }
 
@@ -34,7 +49,20 @@ const showGuitarSuccess = function (data) {
 const updateGuitarSuccess = function () {
   $('#update-modal').modal('hide')
   $('#expand-modal').modal('hide')
-  $('#update-success').modal('show')
+  // $('#update-success').modal('show')
+  $.toast({
+    // text: '',
+    heading: 'Successfully updated guitar',
+    icon: 'success',
+    showHideTransition: 'plain',
+    allowToastClose: true,
+    hideAfter: 3000,
+    stack: 5,
+    position: 'top-right',
+    textAlign: 'left',
+    loader: true,
+    loaderBg: '#9EC600'
+  })
   document.getElementById('updateguitar').reset()
 }
 

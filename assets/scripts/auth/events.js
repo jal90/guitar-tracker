@@ -39,7 +39,7 @@ const onChangePw = (event) => {
 const addHandlers = () => {
   $('#signup').on('submit', onSignup)
   $('#signin').on('submit', onSignin)
-  $('#signout').on('submit', onSignout)
+  $('#signout').on('click', onSignout)
   $('#changepw').on('submit', onChangePw)
 }
 

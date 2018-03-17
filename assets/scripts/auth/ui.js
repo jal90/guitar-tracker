@@ -41,12 +41,12 @@ const signoutSuccess = function () {
 }
 
 const changePwSuccess = function () {
-  $('#feedback').html('changed password successfully')
+  $('#feedback').html('Changed password successfully').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
   document.getElementById('changepw').reset()
 }
 
 const changePwFailure = function () {
-  $('#feedback').html('password change FAILED')
+  $('#feedback').html('Incorrect password, try again').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(1700)
   document.getElementById('changepw').reset()
 }
 

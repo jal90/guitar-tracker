@@ -144,22 +144,30 @@
           </fieldset>
         </form> -->
 
-        <form id="signout">
-          <fieldset>
-            <input type="submit" value="Sign Out">
-          </fieldset>
-        </form>
+
+            <input id="signout" type="submit" value="Sign Out">
+
+            <input type="submit" data-toggle="modal" data-target="#changepw-modal" value="Change your password">
+
+            <div class="modal fade" id="changepw-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog">
+                <div class="modal-container">
+                  <h2>Change password</h2><br>
+                  <form id="changepw" class="pw">
+                    <fieldset>
+                      <h4>Change your password:</h4>
+                      <input name="passwords[old]" type="password" placeholder="current password">
+                      <input name="passwords[new]" type="password" placeholder="new password">
+                      <input type="submit" value="Change password">
+                    </fieldset>
+                    <span id="feedback"></span>
+                  </form>
+                    <input data-toggle="modal" data-target="#changepw-modal" type="submit" value="Close">
+                </div>
+              </div>
+            </div>
 
 
-        <form id="changepw" class="pw">
-          <fieldset>
-            <h4>Change your password:</h4>
-            <input name="passwords[old]" type="password" placeholder="current password">
-            <input name="passwords[new]" type="password" placeholder="new password">
-            <input type="submit" value="Change password">
-          </fieldset>
-          <span id="feedback"></span>
-        </form>
 
 
       </div>

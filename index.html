@@ -24,19 +24,25 @@
     <h1>Guitar Tracker</h1>
 
     <!-- LOG IN and SIGN UP BUTTONS -->
-    <p class="intro">
-      <a class="left-butt" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
-      <a class="right-butt" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
-    </p>
+    <div class="intro">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <a href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+        </div>
+      </div>
+    </div>
 
     <!-- INFO BUTTON -->
     <p class="intro">
       <a href="#" id="intro-toggle">What is Guitar Tracker?</a>
     </p>
     <!-- INFO TEXT -->
-    <p id="intro" class="intro intro-text"> Guitar Tracker is a lightweight application that helps you keep track of your guitar's vitals.
-      Sign up takes seconds, and once you have an account you can create instances of guitars which are saved in your catalog.
-      They can be updated at any time, to reflect changes in strings or setup. Give it a try!
+    <p id="intro" class="intro intro-text">
+      Guitar Tracker is a lightweight application that helps you keep track of your guitar's vitals. Sign up takes seconds, and once you have an account you can create instances of guitars which are saved in your catalog. They can be updated at any time, to
+      reflect changes in strings or setup. Give it a try!
     </p>
   </div>
   <!-- END OF HOME PAGE -->
@@ -70,14 +76,14 @@
       <div class="modal-container">
         <h2>Log in to Your Account</h2><br>
         <form id="signin">
-          <p>email:</p>
+          <label>email:</label>
           <input name="credentials[email]" type="text">
-          <p>password:</p>
+          <label>password:</label>
           <input name="credentials[password]" type="password">
           <input type="submit" value="Log in">
         </form>
         <div class="login-feedback">
-          <p>Invalid input, try again</p>
+          <label>Invalid input, try again</label>
         </div>
         <input data-toggle="modal" data-target="#login-modal" type="submit" value="Close">
         <div id="signup-signin"></div>
@@ -93,16 +99,16 @@
       <div class="modal-container">
         <h2>Sign up for guitar tracker</h2><br>
         <form id="signup">
-          <p>email:</p>
+          <label>email:</label>
           <input name="credentials[email]" type="email">
-          <p>password:</p>
+          <label>password:</label>
           <input name="credentials[password]" type="password">
-          <p>confirm password:</p>
+          <label>confirm password:</label>
           <input name="credentials[password_confirmation]" type="password">
           <input type="submit" value="Sign Up!">
         </form>
         <div class="signup-feedback">
-          <p>Invalid input, try again</p>
+          <label>Invalid input, try again</label>
         </div>
         <div class="loading">Loading...</div>
         <input data-toggle="modal" data-target="#signup-modal" type="submit" value="Close">

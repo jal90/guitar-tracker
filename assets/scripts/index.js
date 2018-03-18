@@ -12,6 +12,15 @@ $(() => {
   authEvents.addHandlers()
   userEvents.addHandlers()
   guitarEvents.addHandlers()
+  $(document).ajaxStart(function () {
+    $('.loading').show()
+  })
+  $(document).ajaxComplete(function () {
+    $('.loading').hide()
+  })
+  $(document).ajaxError(function () {
+    $('.loading').hide()
+  })
 })
 
 // use require with a reference to bundle the file and use it in this file

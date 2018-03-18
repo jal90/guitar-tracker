@@ -51,9 +51,8 @@ h4 {
 //   background-position: -200px;
 // }
 
-.col {
-  text-align: center;
-}
+// Example of a wildcard selector, something I didn't realize existed
+// [class*=' col-']
 
 .left-butt {
   margin-right: 7vw;
@@ -68,9 +67,9 @@ h4 {
   text-align: center;
 }
 
-.catalog {
-  background-color: yellow;
-}
+// .catalog {
+
+// }
 
 p {
   text-align: center;
@@ -80,8 +79,15 @@ p {
 }
 
 .user-options input {
-  margin: 2vh;
+  margin: 2vh 0;
   display: inline;
+}
+
+.spaced {
+  // margin: 0 20px;
+  background-color: #f7f7f7;
+  padding: 0;
+  border: 5px solid white;
 }
 
 .intro {
@@ -127,13 +133,12 @@ label {
   display: none;
 }
 
-.btn-warning {
-  margin-bottom: 5px;
+.loading {
+  display: none;
 }
 
-.spaced {
-  padding: 15px;
-  border: solid yellow 1px;
+.btn-warning {
+  margin-bottom: 5px;
 }
 
 .row {

@@ -81,6 +81,7 @@
         </div>
         <input data-toggle="modal" data-target="#login-modal" type="submit" value="Close">
         <div id="signup-signin"></div>
+        <div class="loading">Loading...</div>
       </div>
     </div>
   </div>
@@ -103,6 +104,7 @@
         <div class="signup-feedback">
           <p>Invalid input, try again</p>
         </div>
+        <div class="loading">Loading...</div>
         <input data-toggle="modal" data-target="#signup-modal" type="submit" value="Close">
       </div>
     </div>
@@ -135,9 +137,9 @@
         <form id="createguitar" class="createguitar">
           <legend> Create Guitar</legend>
           <label> Make (required):</label>
-          <input name="guitar[make]" type="text" maxlength="17" required>
+          <input name="guitar[make]" type="text" maxlength="16" required>
           <label> Model (required):</label>
-          <input name="guitar[model]" type="text" maxlength="17" required>
+          <input name="guitar[model]" type="text" maxlength="16" required>
           <label> String brand:</label>
           <input name="guitar[string_brand]" type="text">
           <label> String gauge:</label>
@@ -188,9 +190,9 @@
         <form id="updateguitar">
           <legend> Update guitar</legend>
           <label> Make (required):</label>
-          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" maxlength="17" required>
+          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" maxlength="16" required>
           <label> Model (required):</label>
-          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" maxlength="17" required>
+          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" maxlength="16" required>
           <label> String brand:</label>
           <input id="string-brand" name="guitar[string_brand]" type="text" placeholder="string brand">
           <label> String gauge:</label>

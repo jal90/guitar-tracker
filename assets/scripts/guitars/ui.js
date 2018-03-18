@@ -6,7 +6,7 @@ require('../../../node_modules/jquery-toast-plugin/src/jquery.toast.css')
 
 const createGuitarSuccess = function () {
   $('#create-modal').modal('hide')
-  // $('#update-success').modal('show')
+
   $.toast({
     // text: '',
     heading: 'Successfully created new guitar',
@@ -36,6 +36,12 @@ const getGuitarsSuccess = function (data) {
   } else {
     $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
     $('#display-message').html('')
+    for (let i = 0; i < data.guitars.length; i++) {
+      if (data.guitars[i].make === 'Fender') {
+        // $(event.target).child('.icon').html('testing')
+        console.log(event.target)
+      }
+    }
   }
 }
 
@@ -49,7 +55,7 @@ const showGuitarSuccess = function (data) {
 const updateGuitarSuccess = function () {
   $('#update-modal').modal('hide')
   $('#expand-modal').modal('hide')
-  // $('#update-success').modal('show')
+
   $.toast({
     // text: '',
     heading: 'Successfully updated guitar',
@@ -87,11 +93,6 @@ const deleteGuitarSuccess = function () {
   })
 }
 
-// function unnecessary because deleting will never fail (option only shows up on existing guitars)
-const deleteGuitarFailure = function () {
-  $('body').append('You somehow managed to break the site. Contgratulations. Delete guitar FAILED')
-}
-
 module.exports = {
   createGuitarSuccess,
   createGuitarFailure,
@@ -99,6 +100,5 @@ module.exports = {
   showGuitarSuccess,
   updateGuitarSuccess,
   updateGuitarFailure,
-  deleteGuitarSuccess,
-  deleteGuitarFailure
+  deleteGuitarSuccess
 }

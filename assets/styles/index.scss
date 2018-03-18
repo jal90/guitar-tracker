@@ -68,7 +68,7 @@ h4 {
 }
 
 .catalog {
-  max-width: 70%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -90,10 +90,16 @@ p {
   padding: 0;
   border: 5px solid white;
   border-radius: 7px;
+  // margin: 20px;
+}
+
+.icon {
+  position: fixed;
 }
 
 .col-lg-3 {
   padding: 10px;
+  margin: 0 auto;
 }
 
 .intro {

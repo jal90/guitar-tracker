@@ -37,7 +37,6 @@ const signinFailure = function () {
 const signoutSuccess = function () {
   $('.user-page').hide()
   $('#home-page').show()
-  $('#display-message').html('')
   $('#guitar-display').html('')
   $('#feedback').html('')
   document.getElementById('updateguitar').reset()

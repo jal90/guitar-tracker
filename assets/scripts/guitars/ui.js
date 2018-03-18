@@ -32,10 +32,10 @@ const getGuitarsSuccess = function (data) {
   const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
 
   if (data.guitars.length === 0) {
-    $('#guitar-display').html('Your catalog is empty. When you\'ve made guitars they\'ll show up here. Click \'Create Guitar\' to get started')
+    $('#display-message').html('Your catalog is empty. When you\'ve made guitars they\'ll show up here. Click \'Create Guitar\' to get started')
   } else {
-    $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
     $('#display-message').html('')
+    $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')
     for (let i = 0; i < data.guitars.length; i++) {
       if (data.guitars[i].make === 'Fender') {
         // $(event.target).child('.icon').html('testing')

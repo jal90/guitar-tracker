@@ -6,9 +6,9 @@ by adding a class so that the enhanced view pops up for the guitar clicked on. A
 clickable, but the message should probably be in ui.js, not here-->
 
   <div data-id="{{guitar.id}}">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 spaced">
-      <h4>Make: {{guitar.make}}</h4>
-      <h4>Model: {{guitar.model}}</h4>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 spaced">
+      <h4>{{guitar.make}}</h4>
+      <h4>{{guitar.model}}</h4>
 
       <button data-id= {{guitar.id}}  data-toggle="modal" data-target="#expand-modal" class="btn btn-default btn-block expandButton">See details</button>
 

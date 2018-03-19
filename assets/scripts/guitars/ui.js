@@ -32,7 +32,7 @@ const getGuitarsSuccess = function (data) {
   const showGuitarsHTML = showGuitarsTemplate({ guitars: data.guitars })
 
   if (data.guitars.length === 0) {
-    $('#display-message').html('Your catalog is empty. When you\'ve made guitars they\'ll show up here. Click \'Create Guitar\' to get started')
+    $('#display-message').html('Your catalog is empty. When you\'ve made guitars they\'ll show up here. Click \'Create a guitar\' to get started')
   } else {
     $('#display-message').html('')
     $('#guitar-display').hide().html(showGuitarsHTML).fadeIn('slow')

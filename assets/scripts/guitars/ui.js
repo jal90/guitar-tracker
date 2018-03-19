@@ -11,14 +11,16 @@ const createGuitarSuccess = function () {
     // text: '',
     heading: 'Successfully created new guitar',
     icon: 'success',
-    showHideTransition: 'plain',
+    showHideTransition: 'slide',
     allowToastClose: true,
     hideAfter: 3000,
     stack: 5,
     position: 'top-right',
     textAlign: 'left',
     loader: true,
-    loaderBg: '#9EC600'
+    loaderBg: '#fed',
+    bgColor: '#def',
+    textColor: 'black'
   })
   document.getElementById('createguitar').reset()
 }
@@ -60,7 +62,7 @@ const updateGuitarSuccess = function () {
     // text: '',
     heading: 'Successfully updated guitar',
     icon: 'success',
-    showHideTransition: 'plain',
+    showHideTransition: 'slide',
     allowToastClose: true,
     hideAfter: 3000,
     stack: 5,
@@ -82,7 +84,7 @@ const deleteGuitarSuccess = function () {
     // text: '',
     heading: 'Deleted guitar',
     icon: 'error',
-    showHideTransition: 'plain',
+    showHideTransition: 'slide',
     allowToastClose: true,
     hideAfter: 3000,
     stack: 5,

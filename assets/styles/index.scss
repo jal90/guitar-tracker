@@ -9,20 +9,17 @@ html {
 }
 
 a {
-  /* // margin: 7vw; */
+  color: #fff;
   margin: 0 auto;
-
-  /* // color: #012; */
-  color: white;
 }
 
 body {
   background-color: #def;
-  font-family: georgia, sans-serif;
   background-image: url('https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40ad7b124b789719a70c867561138701&auto=format&fit=crop&w=1500&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 -175px;
+  font-family: georgia, sans-serif;
 }
 
 .container-fluid {
@@ -35,33 +32,10 @@ h1 {
   margin-bottom: 7vh;
   font-size: 7vw;
   color: #4e5f74;
-
-  /* // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 h4 {
   text-align: center;
-}
-
-// A background image for modal. May come back to this idea
-// .create {
-//   background-image: url('https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bb892f8f4973cf37f34681d40544efc&auto=format&fit=crop&w=1050&q=80');
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: -200px;
-// }
-
-// Example of a wildcard selector, something I didn't realize existed
-// [class*=' col-']
-
-.user-options {
-  background-color: #ddf;
-  text-align: center;
-}
-
-.catalog {
-  max-width: 80%;
-  margin: 0 auto;
 }
 
 .intro {
@@ -84,22 +58,42 @@ h4 {
   text-align: center;
 }
 
+.user-page {
+  display: none;
+  width: 100%;
+}
+
+.user-options {
+  background-color: #ddf;
+  text-align: center;
+}
+
 .user-options input {
-  margin: 2vh 0;
+  margin: 2vh 0.7vw;
   display: inline;
+  border-radius: 7px;
+  font-size: 1.2em;
+}
+
+.catalog {
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .spaced {
-  // margin: 0 20px;
-  background-color: #def;
+  background-color: rgba(143, 143, 143, 0.9);
+  color: #4e5f74;
   padding: 0;
   border: 5px solid white;
   border-radius: 7px;
-  // margin: 20px;
 }
 
-.icon {
-  position: fixed;
+// .icon {
+//   position: fixed;
+// }
+
+.row {
+  margin: 0;
 }
 
 .col-lg-3 {
@@ -117,11 +111,6 @@ input[type=date] {
 
 input[type=number] {
   margin-bottom: 15px;
-}
-
-.user-page {
-  display: none;
-  width: 100%;
 }
 
 .login-feedback {
@@ -144,17 +133,13 @@ label {
   margin-bottom: 5px;
 }
 
-.row {
-  margin: 0;
-}
-
 .modal-container {
   padding: 30px;
   max-width: 350px;
   width: 100%;
   background-color: #f7f7f7;
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 7px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -185,8 +170,6 @@ input[type=email] {
   padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  // background-color: #4e5f74;
-  // color: white;
 }
 
 .modal-container input[type=text]:hover,

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Guitar Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<!-- END OF HEAD -->
+
+
+<!-- START OF BODY -->
+
+<body class="container-fluid">
+
+  <!-- START OF HOME PAGE -->
+  <div id="home-page">
+    <h1>Guitar Tracker</h1>
+
+    <!-- LOG IN and SIGN UP BUTTONS -->
+    <div class="intro">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <a href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO BUTTON -->
+    <p class="intro">
+      <a href="#" id="intro-toggle">What is Guitar Tracker?</a>
+    </p>
+    <!-- INFO TEXT -->
+    <div id="intro" class="intro intro-text">
+      Guitar Tracker is a lightweight application that helps you keep track of your guitar's vitals.
+      Sign up takes seconds, and once you have an account you can create instances of guitars which are saved in your catalog.
+      They can be updated at any time to reflect changes in strings or setup. Give it a try!
+    </div>
+
+  </div>
+  <!-- END OF HOME PAGE -->
+
+
+
+
+  <!-- START OF USER PAGE -->
+  <div class="user-page">
+    <h1> Welcome, <span id="welcome"></span></h1>
+
+    <div class="user-options">
+      <input type="submit" data-toggle="modal" data-target="#create-modal" value="Create a guitar">
+      <input type="submit" data-toggle="modal" data-target="#changepw-modal" value="Change your password">
+      <input id="signout" type="submit" value="Sign Out">
+      <div id="display-message"></div>
+    </div>
+
+    <div class="catalog container-fluid">
+      <div id="guitar-display" class="row">
+        <!-- GUITARS GET LOADED IN HERE VIA HANDLEBARS -->
+      </div>
+    </div>
+  </div>
+  <!-- END OF USER PAGE -->
+
+
+  <!-- MODALS MODALS MODALS -->
+  <!-- LOG IN MODAL -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <h2>Log in to Your Account</h2><br>
+        <form id="signin">
+          <label>username:</label>
+          <input name="credentials[email]" type="text">
+          <label>password:</label>
+          <input name="credentials[password]" type="password">
+          <input type="submit" value="Log in">
+        </form>
+        <div class="login-feedback">
+          <label>Invalid input, try again</label>
+        </div>
+        <input data-toggle="modal" data-target="#login-modal" type="submit" value="Close">
+        <div id="signup-signin"></div>
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+  </div>
+  <!-- END LOG IN MODAL -->
+
+  <!-- SIGN UP MODAL -->
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <h2>Sign up for guitar tracker</h2><br>
+        <form id="signup">
+          <label>username:</label>
+          <input name="credentials[email]" type="text">
+          <label>password:</label>
+          <input name="credentials[password]" type="password">
+          <label>confirm password:</label>
+          <input name="credentials[password_confirmation]" type="password">
+          <input type="submit" value="Sign Up!">
+        </form>
+        <div class="signup-feedback">
+          <label>Invalid input, try again</label>
+        </div>
+        <div class="loading">Loading...</div>
+        <input data-toggle="modal" data-target="#signup-modal" type="submit" value="Close">
+      </div>
+    </div>
+  </div>
+  <!-- END SIGN UP MODAL -->
+
+  <!-- CHANGE PASSWORD MODAL -->
+  <div class="modal fade" id="changepw-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <h2>Change password</h2><br>
+        <form id="changepw" class="pw">
+          <label> Current password</label>
+          <input name="passwords[old]" type="password" placeholder="current password">
+          <label> New password</label>
+          <input name="passwords[new]" type="password" placeholder="new password">
+          <input type="submit" value="Change password">
+          <span id="feedback"></span>
+        </form>
+        <input data-toggle="modal" data-target="#changepw-modal" type="submit" value="Close">
+      </div>
+    </div>
+  </div>
+  <!-- END CHANGE PASSWORD MODAL -->
+
+  <!-- CREATE GUITAR MODAL -->
+  <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <form id="createguitar" class="createguitar">
+          <legend> Create Guitar</legend>
+          <label> Make (required):</label>
+          <input name="guitar[make]" type="text" maxlength="16" required>
+          <label> Model (required):</label>
+          <input name="guitar[model]" type="text" maxlength="16" required>
+          <label> String brand:</label>
+          <input name="guitar[string_brand]" type="text">
+          <label> String gauge:</label>
+          <input name="guitar[string_guage]" type="number" step="0.001" style="display: block;">
+          <label> Date of last string change:</label>
+          <input name="guitar[last_string_change]" type="date" style="display: block;">
+          <label> Date of last setup:</label>
+          <input name="guitar[last_setup]" type="date" style="display: block;">
+          <label> Setup notes:</label>
+          <input name="guitar[setup_notes]" type="text">
+          <input type="submit" value="Create Guitar">
+        </form>
+        <input data-toggle="modal" data-target="#create-modal" type="submit" value="Close">
+      </div>
+    </div>
+  </div>
+  <!-- END CREATE GUITAR MODAL -->
+
+  <!-- EXPANDED VIEW MODAL -->
+  <div class="modal fade" id="expand-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <div id="guitar-details">
+          <!-- Details get loaded into here via handlebars -->
+        </div>
+        <input data-toggle="modal" data-target="#expand-modal" type="submit" value="Close">
+      </div>
+    </div>
+  </div>
+  <!-- END EXPANDED VIEW MODAL -->
+
+  <!-- DELETE CONFIRMATION MODAL -->
+  <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <h2>Are you sure you want to delete this guitar?</h2><br>
+        <input data-toggle="modal" data-target="#expand-modal" id="delete" type="submit" value="Yes">
+        <input data-toggle="modal" data-target="#delete-modal" type="submit" value="No">
+      </div>
+    </div>
+  </div>
+  <!-- END DELETE CONFIRMATION MODAL -->
+
+  <!-- UPDATE GUITAR MODAL -->
+  <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <form id="updateguitar">
+          <legend> Update guitar</legend>
+          <label> Make (required):</label>
+          <input id="guitar-make" name="guitar[make]" type="text" placeholder="make" maxlength="16" required>
+          <label> Model (required):</label>
+          <input id="guitar-model" name="guitar[model]" type="text" placeholder="model" maxlength="16" required>
+          <label> String brand:</label>
+          <input id="string-brand" name="guitar[string_brand]" type="text" placeholder="string brand">
+          <label> String gauge:</label>
+          <input id="string-guage" name="guitar[string_guage]" type="number" step="0.001" placeholder="string gauge" style="display: block;">
+          <label> Last string change:</label>
+          <input id="last-string-change" name="guitar[last_string_change]" type="date" placeholder="last string change" style="display: block;">
+          <label> Last setup:</label>
+          <input id="last-setup" name="guitar[last_setup]" type="date" placeholder="last setup" style="display: block;">
+          <label> Setup notes:</label>
+          <input id="setup-notes" name="guitar[setup_notes]" type="text" placeholder="setup notes">
+          <!-- submit button -->
+          <input id="update" type="submit" value="Update this guitar">
+        </form>
+        <input data-toggle="modal" data-target="#update-modal" type="submit" value="Close">
+      </div>
+    </div>
+  </div>
+  <!-- END UPDATE GUITAR MODAL -->
+
+
+</body>
+<!-- END OF BODY -->
+
+</html>

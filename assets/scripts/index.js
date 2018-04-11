@@ -6,8 +6,11 @@ const config = require('./config')
 const authEvents = require('./auth/events.js')
 const userEvents = require('./users/events.js')
 const guitarEvents = require('./guitars/events.js')
+const api = require('./auth/api.js')
 
 $(() => {
+  // console.log('api is ', api)
+  api.signup()
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   userEvents.addHandlers()
